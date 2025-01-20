@@ -25,7 +25,9 @@ class GuidedDiffusion(torch.nn.Module):
         model_config.update(vars(self.config.model))
         print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
-        model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
+        # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
+        model.load_state_dict(torch.load("/data1/saiyuel/projects/diffusion-ars/imagenet/256x256_diffusion_uncond.pt")
+        )
         model.requires_grad_(False).eval().to(self.device)
 
         if model_config['use_fp16']:
@@ -104,12 +106,23 @@ class GuidedDiffusion(torch.nn.Module):
                             torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
 
                 # t steps denoise
-                inter = t/self.args.num_t_steps
-                indices_t_steps = [round(t-i*inter) for i in range(self.args.num_t_steps)]
+                inter = t/self.args.num_t_steps # 396/10=39.6
+                indices_t_steps = [round(t-i*inter) for i in range(self.args.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
                 
                 for i in range(len(indices_t_steps)):
                     t = torch.tensor([len(indices_t_steps)-i-1] * x0.shape[0], device=self.device)
                     real_t = torch.tensor([indices_t_steps[i]] * x0.shape[0], device=self.device)
+                    # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
+                    # at i=0, t is 9, real_t is 396, step is 10
+                    # at i=1, t is 8, real_t is 356, step is 9
+                    # at i=2, t is 7, real_t is 317, step is 8
+                    # at i=3, t is 6, real_t is 277, step is 7
+                    # at i=4, t is 5, real_t is 238, step is 6
+                    # at i=5, t is 4, real_t is 198, step is 5
+                    # at i=6, t is 3, real_t is 158, step is 4
+                    # at i=7, t is 2, real_t is 119, step is 3
+                    # at i=8, t is 1, real_t is 79, step is 2
+                    # at i=9, t is 0, real_t is 40, step is 1
                     with torch.no_grad():
                         out = self.diffusion.p_sample(
                             self.model,

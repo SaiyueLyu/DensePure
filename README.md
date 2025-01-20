@@ -1,17 +1,5 @@
 # DensePure: Understanding Diffusion Models towards Adversarial Robustness
 
-<p align="center">
-  <img width="1200" height="300" src="./pictures/densepure_flowchart.png">
-</p>
-
-Official PyTorch implementation of the paper:<br>
-**[DensePure: Understanding Diffusion Models towards Adversarial Robustness](https://arxiv.org/abs/2211.00322)**
-<br>
-Chaowei Xiao, Zhongzhu Chen, Kun Jin, Jiongxiao Wang, Weili Nie, Mingyan Liu, Anima Anandkumar, Bo Li, Dawn Song<br>
-https://densepure.github.io <br>
-
-Abstract: *Diffusion models have been recently employed to improve certified robustness through the process of denoising. However, the theoretical understanding of why diffusion models are able to improve the certified robustness is still lacking, preventing from further improvement. In this study, we close this gap by analyzing the fundamental properties of diffusion models and establishing the conditions under which they can enhance certified robustness. This deeper understanding allows us to propose a new method DensePure, designed to improve the certified robustness of a pretrained model (i.e. classifier). Given an (adversarial) input, DensePure consists of multiple runs of denoising via the reverse process of the diffusion model (with different random seeds) to get multiple reversed samples, which are then passed through the classifier, followed by majority voting of inferred labels to make the final prediction. This design of using multiple runs of denoising is informed by our theoretical analysis of the conditional distribution of the reversed sample. Specifically, when the data density of a clean sample is high, its conditional density under the reverse process in a diffusion model is also high; thus sampling from the latter conditional distribution can purify the adversarial example and return the corresponding clean sample with a high probability. By using the highest density point in the conditional distribution as the reversed sample, we identify the robust region of a given instance under the diffusion model's reverse process. We show that this robust region is a union of multiple convex sets, and is potentially much larger than the robust regions identified in previous works. In practice, DensePure can approximate the label of the high density region in the conditional distribution so that it can enhance certified robustness. We conduct extensive experiments to demonstrate the effectiveness of DensePure by evaluating its certified robustness given a standard model via randomized smoothing. We show that DensePure is consistently better than existing methods on ImageNet, with 7% improvement on average.* 
-
 ## Requirements
 
 - Python 3.8.5
@@ -24,6 +12,8 @@ Abstract: *Diffusion models have been recently employed to improve certified rob
     ```bash
     pip install -r requirements.txt
     ```
+
+Above Does note work, check Carlini's repo and make the conda env, pip install additional lmdb etc.
 
 ## Datasets, Pre-trained Diffusion Models and Classifiers
 Before running our code, you need to first prepare two datasets CIFAR-10 and ImageNet. CIFAR-10 will be downloaded automatically.
@@ -59,7 +49,7 @@ To get certified accuracy under DensePure, please run the following scripts:
 ```
 cd run_scripts
 bash densepure_cifar10.sh [sigma] [steps] [reverse_seed] # For CIFAR-10
-bash densepure_imagenet.sh [sigma] [steps] [reverse_seed] # For ImageNet
+bash densepure_imagenet.sh 1 10 1 # For ImageNet
 ```
 
 Note: `sigma` is the noise level of randomized smoothing. `steps` is the parameter for fast sampling steps in Section 5.2 and it must be larger than one and smaller than the total reverse steps. `reverse_seed` is a parameter which control majority vote process in Section 5.2. For example, you need to run `densepure_cifar10.sh` 10 times with 10 different `reverse_seed` to finish 10 majority vote numbers experiments. After running above scripts under one `reverse_seed`, you will gain a `.npy` file that contains labels of 100000 (for CIFAR-10) randomized smoothing sampling times. If you want to obtain the final results of 10 majority vote numbers, you need to run the following scripts in `results` directory:
@@ -69,22 +59,3 @@ bash merge_cifar10.sh [sigma] [steps] [majority_vote_numbers] # For CIFAR-10
 bash merge_imagenet.sh [sigma] [steps] [majority_vote_numbers] # For ImageNet
 ```
 
-## Citation
-Please cite our paper and Carlini et al. (2022), if you happen to use this codebase:
-```
-@article{xiao2022densepure,
-  title={DensePure: Understanding Diffusion Models towards Adversarial Robustness},
-  author={Xiao, Chaowei and Chen, Zhongzhu and Jin, Kun and Wang, Jiongxiao and Nie, Weili and Liu, Mingyan and Anandkumar, Anima and Li, Bo and Song, Dawn},
-  journal={arXiv preprint arXiv:2211.00322},
-  year={2022}
-}
-```
-
-```
-@article{carlini2022certified,
-  title={(Certified!!) Adversarial Robustness for Free!},
-  author={Carlini, Nicholas and Tramer, Florian and Kolter, J Zico and others},
-  journal={arXiv preprint arXiv:2206.10550},
-  year={2022}
-}
-```

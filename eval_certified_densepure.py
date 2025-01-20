@@ -44,7 +44,7 @@ class DensePure_Certify(nn.Module):
                 raise NotImplementedError('no classifier')
         elif args.domain == 'imagenet':
             if args.advanced_classifier=='beit':
-                self.classifier = timm.create_model('beit_large_patch16_512', checkpoint_path='pretrained/beit_large_patch16_512_pt22k_ft22kto1k.pth').cuda()
+                self.classifier = timm.create_model('beit_large_patch16_512', pretrained=True).cuda()
                 self.classifier.eval()
             elif args.advanced_classifier=='WRN':
                 self.classifier = timm.create_model('wide_resnet50_2', pretrained=True).cuda()
@@ -97,8 +97,8 @@ class DensePure_Certify(nn.Module):
                 x_re = F.interpolate(x_re, size=(224, 224), mode='bicubic')
 
         if counter % 5 == 0:
-            print(f'x shape (before diffusion models): {x.shape}')
-            print(f'x shape (before classifier): {x_re.shape}')
+            # print(f'x shape (before diffusion models): {x.shape}')
+            # print(f'x shape (before classifier): {x_re.shape}')
             print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
 
         if self.args.advanced_classifier=='vit':
@@ -432,7 +432,7 @@ def parse_args_and_config():
     # certified robustness
     parser.add_argument('--sigma', type=float, default=0.5, help='noise hyperparameter')
     parser.add_argument('--classifier_sigma', type=str, default=0.00, help='sigma for choosing classifier')
-    parser.add_argument("--skip", type=int, default=100, help="how many examples to skip")
+    parser.add_argument("--skip", type=int, default=1000, help="how many examples to skip")
     parser.add_argument("--max", type=int, default=-1, help="stop after this many examples")
     parser.add_argument("--N0", type=int, default=100)
     parser.add_argument("--N", type=int, default=5000, help="number of samples to use")

@@ -1,0 +1,10 @@
+starting the model and loader...
+diffusion_type: guided-ddpm
+model_config: {'image_size': 256, 'num_channels': 256, 'num_res_blocks': 2, 'num_heads': 4, 'num_heads_upsample': -1, 'num_head_channels': 64, 'attention_resolutions': '32,16,8', 'channel_mult': '', 'dropout': 0.0, 'class_cond': False, 'use_checkpoint': False, 'use_scale_shift_norm': True, 'resblock_updown': True, 'use_fp16': True, 'use_new_attention_order': False, 'learn_sigma': True, 'diffusion_steps': 1000, 'noise_schedule': 'linear', 'timestep_respacing': '1000', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': True, 'rescale_learned_sigmas': False}
+/home/saiyuel/anaconda3/envs/denp/lib/python3.8/site-packages/torchvision/transforms/transforms.py:332: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+apply the attack to diffpure + classifier [L2]...
+diffusion times: 0
+Sampling time per batch: 00:50.85
+diffusion times: 5
+Sampling time per batch: 00:34.23
