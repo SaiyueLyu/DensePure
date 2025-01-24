@@ -27,7 +27,7 @@ class GuidedDiffusion(torch.nn.Module):
         print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
         # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
-        model.load_state_dict(torch.load("/data1/saiyuel/github/DensePure/256x256_diffusion_uncond.pt")
+        model.load_state_dict(torch.load("/home/ubuntu/projects/256x256_diffusion_uncond.pt")
         )
         model.requires_grad_(False).eval().to(self.device)
 
@@ -44,17 +44,17 @@ class GuidedDiffusion(torch.nn.Module):
 
         sigma = self.args.sigma
 
-        a = 1/(1+(sigma*2)**2)
-        self.scale = a**0.5
-
         sigma = sigma*2
         jump_sigma = sigma * np.sqrt(1 + 1 / self.budget_jump_to_guiding_ratio ** 2) if self.budget_jump_to_guiding_ratio != 0 else sigma
         self.guide_sigma = sigma * np.sqrt(1 + self.budget_jump_to_guiding_ratio ** 2)
         # print(jump_sigma, self.guide_sigma)
 
+        a = 1/(1+(jump_sigma)**2)
+        self.scale = a**0.5
+
         T = self.args.t_total
         for t in range(len(self.sqrt_recipm1_alphas_cumprod)-1):
-            if self.sqrt_recipm1_alphas_cumprod[t]<sigma and self.sqrt_recipm1_alphas_cumprod[t+1]>=jump_sigma:
+            if self.sqrt_recipm1_alphas_cumprod[t]<jump_sigma and self.sqrt_recipm1_alphas_cumprod[t+1]>=jump_sigma:
                 if jump_sigma - self.sqrt_recipm1_alphas_cumprod[t] > self.sqrt_recipm1_alphas_cumprod[t+1] - jump_sigma:
                     self.t = t+1
                     break
