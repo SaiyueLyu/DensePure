@@ -26,7 +26,7 @@ class GuidedDiffusion(torch.nn.Module):
         print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
         # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
-        model.load_state_dict(torch.load("/data1/saiyuel/projects/diffusion-ars/imagenet/256x256_diffusion_uncond.pt")
+        model.load_state_dict(torch.load("/data1/saiyuel/github/DensePure/256x256_diffusion_uncond.pt")
         )
         model.requires_grad_(False).eval().to(self.device)
 
@@ -91,19 +91,19 @@ class GuidedDiffusion(torch.nn.Module):
 
             elif self.args.use_t_steps:
                 #save random state
-                if self.args.save_predictions:
-                    global_seed_state = torch.random.get_rng_state()
-                    if torch.cuda.is_available():
-                        global_cuda_state = torch.cuda.random.get_rng_state_all()
+                # if self.args.save_predictions:
+                #     global_seed_state = torch.random.get_rng_state()
+                #     if torch.cuda.is_available():
+                #         global_cuda_state = torch.cuda.random.get_rng_state_all()
 
-                    if self.reverse_state==None:
-                        torch.manual_seed(self.args.reverse_seed)
-                        if torch.cuda.is_available():
-                            torch.cuda.manual_seed_all(self.args.reverse_seed)
-                    else:
-                        torch.random.set_rng_state(self.reverse_state)
-                        if torch.cuda.is_available():
-                            torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
+                #     if self.reverse_state==None:
+                #         torch.manual_seed(self.args.reverse_seed)
+                #         if torch.cuda.is_available():
+                #             torch.cuda.manual_seed_all(self.args.reverse_seed)
+                #     else:
+                #         torch.random.set_rng_state(self.reverse_state)
+                #         if torch.cuda.is_available():
+                #             torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
 
                 # t steps denoise
                 inter = t/self.args.num_t_steps # 396/10=39.6
@@ -137,30 +137,30 @@ class GuidedDiffusion(torch.nn.Module):
                         x0 = out["sample"]
 
                 #load random state
-                if self.args.save_predictions:
-                    self.reverse_state = torch.random.get_rng_state()
-                    if torch.cuda.is_available():
-                        self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
+                # if self.args.save_predictions:
+                #     self.reverse_state = torch.random.get_rng_state()
+                #     if torch.cuda.is_available():
+                #         self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
 
-                    torch.random.set_rng_state(global_seed_state)
-                    if torch.cuda.is_available():
-                        torch.cuda.random.set_rng_state_all(global_cuda_state)
+                #     torch.random.set_rng_state(global_seed_state)
+                #     if torch.cuda.is_available():
+                #         torch.cuda.random.set_rng_state_all(global_cuda_state)
 
             else:
                 #save random state
-                if self.args.save_predictions:
-                    global_seed_state = torch.random.get_rng_state()
-                    if torch.cuda.is_available():
-                        global_cuda_state = torch.cuda.random.get_rng_state_all()
+                # if self.args.save_predictions:
+                #     global_seed_state = torch.random.get_rng_state()
+                #     if torch.cuda.is_available():
+                #         global_cuda_state = torch.cuda.random.get_rng_state_all()
 
-                    if self.reverse_state==None:
-                        torch.manual_seed(self.args.reverse_seed)
-                        if torch.cuda.is_available():
-                            torch.cuda.manual_seed_all(self.args.reverse_seed)
-                    else:
-                        torch.random.set_rng_state(self.reverse_state)
-                        if torch.cuda.is_available():
-                            torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
+                #     if self.reverse_state==None:
+                #         torch.manual_seed(self.args.reverse_seed)
+                #         if torch.cuda.is_available():
+                #             torch.cuda.manual_seed_all(self.args.reverse_seed)
+                #     else:
+                #         torch.random.set_rng_state(self.reverse_state)
+                #         if torch.cuda.is_available():
+                #             torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
 
                 # full steps denoise
                 indices = list(range(round(t)))[::-1]
@@ -176,13 +176,13 @@ class GuidedDiffusion(torch.nn.Module):
                         x0 = out["sample"]
 
                 #load random state
-                if self.args.save_predictions:
-                    self.reverse_state = torch.random.get_rng_state()
-                    if torch.cuda.is_available():
-                        self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
+                # if self.args.save_predictions:
+                #     self.reverse_state = torch.random.get_rng_state()
+                #     if torch.cuda.is_available():
+                #         self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
 
-                    torch.random.set_rng_state(global_seed_state)
-                    if torch.cuda.is_available():
-                        torch.cuda.random.set_rng_state_all(global_cuda_state)
+                #     torch.random.set_rng_state(global_seed_state)
+                #     if torch.cuda.is_available():
+                #         torch.cuda.random.set_rng_state_all(global_cuda_state)
 
             return x0

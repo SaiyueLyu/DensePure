@@ -350,9 +350,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
     else:
@@ -375,9 +375,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
 
@@ -446,8 +446,8 @@ def parse_args_and_config():
     parser.add_argument("--vit_batch", type=int, default=0, help="batch size")
     parser.add_argument('--use_one_step', action='store_true', help='whether to use one step denoise')
     parser.add_argument('--use_parallel', action='store_true', help='whether to use multi gpus to compute radius')
-    parser.add_argument('--save_predictions', action='store_true', help='whether to save predictions')
-    parser.add_argument("--predictions_path", type=str, default='../npy', help="npy save file")
+    # parser.add_argument('--save_predictions', action='store_true', help='whether to save predictions')
+    # parser.add_argument("--predictions_path", type=str, default='../npy', help="npy save file")
     parser.add_argument('--reverse_seed', type=int, default=0, help='reverse seed')
     parser.add_argument('--use_t_steps', action='store_true', help='whether to use t steps denoise')
     parser.add_argument('--num_t_steps', type=int, default=1, help='numbers of reverse t steps')

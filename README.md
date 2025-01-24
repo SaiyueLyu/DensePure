@@ -13,7 +13,17 @@
     pip install -r requirements.txt
     ```
 
-Above Does note work, check Carlini's repo and make the conda env, pip install additional lmdb etc.
+Above Does note work, check Carlini's repo and make the conda env, pip install additional lmdb etc:
+ ```
+  conda create -n denp python=3.8 -y
+  conda activate denp
+  conda install pytorch==1.12.0 torchvision==0.13.0 cudatoolkit=11.3 -c pytorch
+  pip install timm transformers statsmodels
+  pip install lmdb
+  pip install blobfile
+ ```
+
+Then change model ckpt path in `runners/diffpure_guided_densepure.py` line 29. Change imagenet data path in `dataset.py`.
 
 ## Datasets, Pre-trained Diffusion Models and Classifiers
 Before running our code, you need to first prepare two datasets CIFAR-10 and ImageNet. CIFAR-10 will be downloaded automatically.

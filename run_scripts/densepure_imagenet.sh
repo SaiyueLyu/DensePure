@@ -24,6 +24,4 @@ python eval_certified_densepure.py \
 --advanced_classifier beit \
 --use_t_steps \
 --num_t_steps $steps \
-#--save_predictions \
---predictions_path exp/imagenet/$sigma- \
 --reverse_seed $reverse_seed
