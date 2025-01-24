@@ -14,6 +14,7 @@ class GuidedDiffusion(torch.nn.Module):
         super().__init__()
         self.args = args
         self.config = config
+        self.budget_jump_to_guiding_ratio = config.budget_jump_to_guiding_ratio
         if device is None:
             device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.device = device
@@ -47,10 +48,14 @@ class GuidedDiffusion(torch.nn.Module):
         self.scale = a**0.5
 
         sigma = sigma*2
+        jump_sigma = sigma * np.sqrt(1 + 1 / self.budget_jump_to_guiding_ratio ** 2) if self.budget_jump_to_guiding_ratio != 0 else sigma
+        self.guide_sigma = sigma * np.sqrt(1 + self.budget_jump_to_guiding_ratio ** 2)
+        # print(jump_sigma, self.guide_sigma)
+
         T = self.args.t_total
         for t in range(len(self.sqrt_recipm1_alphas_cumprod)-1):
-            if self.sqrt_recipm1_alphas_cumprod[t]<sigma and self.sqrt_recipm1_alphas_cumprod[t+1]>=sigma:
-                if sigma - self.sqrt_recipm1_alphas_cumprod[t] > self.sqrt_recipm1_alphas_cumprod[t+1] - sigma:
+            if self.sqrt_recipm1_alphas_cumprod[t]<sigma and self.sqrt_recipm1_alphas_cumprod[t+1]>=jump_sigma:
+                if jump_sigma - self.sqrt_recipm1_alphas_cumprod[t] > self.sqrt_recipm1_alphas_cumprod[t+1] - jump_sigma:
                     self.t = t+1
                     break
                 else:
@@ -58,7 +63,7 @@ class GuidedDiffusion(torch.nn.Module):
                     break
             self.t = len(diffusion.alphas_cumprod)-1
 
-    def image_editing_sample(self, img=None, bs_id=0, tag=None, sigma=0.0):
+    def image_editing_sample(self, img=None, bs_id=0, tag=None):
         assert isinstance(img, torch.Tensor)
         batch_size = img.shape[0]
 
@@ -72,6 +77,9 @@ class GuidedDiffusion(torch.nn.Module):
 
             x0 = self.scale*(img)
             t = self.t
+            img_scaled = x0
+
+            model_kwargs={"img" : img_scaled}
 
             if self.args.use_clustering:
                 x0 = x0.unsqueeze(1).repeat(1,self.args.clustering_batch,1,1,1).view(batch_size*self.args.clustering_batch,3,256,256)
@@ -86,25 +94,9 @@ class GuidedDiffusion(torch.nn.Module):
                     t+self.args.t_plus,
                     clip_denoised=True,
                 )
-
                 x0 = out["pred_xstart"]
 
             elif self.args.use_t_steps:
-                #save random state
-                # if self.args.save_predictions:
-                #     global_seed_state = torch.random.get_rng_state()
-                #     if torch.cuda.is_available():
-                #         global_cuda_state = torch.cuda.random.get_rng_state_all()
-
-                #     if self.reverse_state==None:
-                #         torch.manual_seed(self.args.reverse_seed)
-                #         if torch.cuda.is_available():
-                #             torch.cuda.manual_seed_all(self.args.reverse_seed)
-                #     else:
-                #         torch.random.set_rng_state(self.reverse_state)
-                #         if torch.cuda.is_available():
-                #             torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
-
                 # t steps denoise
                 inter = t/self.args.num_t_steps # 396/10=39.6
                 indices_t_steps = [round(t-i*inter) for i in range(self.args.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
@@ -123,45 +115,22 @@ class GuidedDiffusion(torch.nn.Module):
                     # at i=7, t is 2, real_t is 119, step is 3
                     # at i=8, t is 1, real_t is 79, step is 2
                     # at i=9, t is 0, real_t is 40, step is 1
+                    # print(f"t before is {t[0].item()}")
                     with torch.no_grad():
                         out = self.diffusion.p_sample(
                             self.model,
                             x0,
                             t,
                             clip_denoised=True,
+                            cond_fn = self.cond_fn,
+                            model_kwargs = model_kwargs,
                             indices_t_steps = indices_t_steps.copy(),
                             T = self.args.t_total,
                             step = len(indices_t_steps)-i,
                             real_t = real_t
                         )
                         x0 = out["sample"]
-
-                #load random state
-                # if self.args.save_predictions:
-                #     self.reverse_state = torch.random.get_rng_state()
-                #     if torch.cuda.is_available():
-                #         self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
-
-                #     torch.random.set_rng_state(global_seed_state)
-                #     if torch.cuda.is_available():
-                #         torch.cuda.random.set_rng_state_all(global_cuda_state)
-
             else:
-                #save random state
-                # if self.args.save_predictions:
-                #     global_seed_state = torch.random.get_rng_state()
-                #     if torch.cuda.is_available():
-                #         global_cuda_state = torch.cuda.random.get_rng_state_all()
-
-                #     if self.reverse_state==None:
-                #         torch.manual_seed(self.args.reverse_seed)
-                #         if torch.cuda.is_available():
-                #             torch.cuda.manual_seed_all(self.args.reverse_seed)
-                #     else:
-                #         torch.random.set_rng_state(self.reverse_state)
-                #         if torch.cuda.is_available():
-                #             torch.cuda.random.set_rng_state_all(self.reverse_state_cuda)
-
                 # full steps denoise
                 indices = list(range(round(t)))[::-1]
                 for i in indices:
@@ -175,14 +144,17 @@ class GuidedDiffusion(torch.nn.Module):
                         )
                         x0 = out["sample"]
 
-                #load random state
-                # if self.args.save_predictions:
-                #     self.reverse_state = torch.random.get_rng_state()
-                #     if torch.cuda.is_available():
-                #         self.reverse_state_cuda = torch.cuda.random.get_rng_state_all()
-
-                #     torch.random.set_rng_state(global_seed_state)
-                #     if torch.cuda.is_available():
-                #         torch.cuda.random.set_rng_state_all(global_cuda_state)
-
             return x0
+
+    def cond_fn(self, x, t, **kwargs):
+        # scale = 2 * torch.ones(10).cuda()
+        scale = 1 / (np.sqrt(self.args.num_t_steps - 1) * self.guide_sigma)
+        var = kwargs["var"]
+        img = kwargs["img"]
+        guide = (img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
+        # print(t[0].item())
+        # breakpoint()
+        # print(guide.min().item(), guide.max().item())
+        return guide
+
+

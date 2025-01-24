@@ -84,7 +84,7 @@ class DensePure_Certify(nn.Module):
             print(f'diffusion times: {counter}')
 
         start_time = time()
-        x_re = self.runner.image_editing_sample((x - 0.5) * 2, bs_id=counter, tag=self.tag, sigma=self.args.sigma)
+        x_re = self.runner.image_editing_sample((x - 0.5) * 2, bs_id=counter, tag=self.tag)
         minutes, seconds = divmod(time() - start_time, 60)
 
         # if self.args.save_info:
