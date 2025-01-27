@@ -7,7 +7,7 @@ import torchvision.models as models
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from architectures import get_architecture
-import data
+# import data
 
 
 def compute_n_params(model, return_str=True):
@@ -137,37 +137,37 @@ def get_image_classifier_certified(classifier_path, dataset):
     return base_classifier
 
 
-def load_data(args, adv_batch_size):
-    if 'imagenet' in args.domain:
-        val_dir = '/home/data/imagenet/imagenet'  # using imagenet lmdb data
-        val_transform = data.get_transform(args.domain, 'imval', base_size=224)
-        val_data = data.imagenet_lmdb_dataset_sub(val_dir, transform=val_transform,
-                                                  num_sub=args.num_sub, data_seed=args.data_seed)
-        n_samples = len(val_data)
-        val_loader = DataLoader(val_data, batch_size=n_samples, shuffle=False, pin_memory=True, num_workers=4)
-        x_val, y_val = next(iter(val_loader))
-    elif 'cifar10' in args.domain:
-        data_dir = './dataset'
-        transform = transforms.Compose([transforms.ToTensor()])
-        val_data = data.cifar10_dataset_sub(data_dir, transform=transform,
-                                            num_sub=args.num_sub, data_seed=args.data_seed)
-        n_samples = len(val_data)
-        val_loader = DataLoader(val_data, batch_size=n_samples, shuffle=False, pin_memory=True, num_workers=4)
-        x_val, y_val = next(iter(val_loader))
-    elif 'celebahq' in args.domain:
-        data_dir = './dataset/celebahq'
-        attribute = args.classifier_name.split('__')[-1]  # `celebahq__Smiling`
-        val_transform = data.get_transform('celebahq', 'imval')
-        clean_dset = data.get_dataset('celebahq', 'val', attribute, root=data_dir, transform=val_transform,
-                                      fraction=2, data_seed=args.data_seed)  # data_seed randomizes here
-        loader = DataLoader(clean_dset, batch_size=adv_batch_size, shuffle=False,
-                            pin_memory=True, num_workers=4)
-        x_val, y_val = next(iter(loader))  # [0, 1], 256x256
-    else:
-        raise NotImplementedError(f'Unknown domain: {args.domain}!')
+# def load_data(args, adv_batch_size):
+#     if 'imagenet' in args.domain:
+#         val_dir = '/home/data/imagenet/imagenet'  # using imagenet lmdb data
+#         val_transform = data.get_transform(args.domain, 'imval', base_size=224)
+#         val_data = data.imagenet_lmdb_dataset_sub(val_dir, transform=val_transform,
+#                                                   num_sub=args.num_sub, data_seed=args.data_seed)
+#         n_samples = len(val_data)
+#         val_loader = DataLoader(val_data, batch_size=n_samples, shuffle=False, pin_memory=True, num_workers=4)
+#         x_val, y_val = next(iter(val_loader))
+#     elif 'cifar10' in args.domain:
+#         data_dir = './dataset'
+#         transform = transforms.Compose([transforms.ToTensor()])
+#         val_data = data.cifar10_dataset_sub(data_dir, transform=transform,
+#                                             num_sub=args.num_sub, data_seed=args.data_seed)
+#         n_samples = len(val_data)
+#         val_loader = DataLoader(val_data, batch_size=n_samples, shuffle=False, pin_memory=True, num_workers=4)
+#         x_val, y_val = next(iter(val_loader))
+#     elif 'celebahq' in args.domain:
+#         data_dir = './dataset/celebahq'
+#         attribute = args.classifier_name.split('__')[-1]  # `celebahq__Smiling`
+#         val_transform = data.get_transform('celebahq', 'imval')
+#         clean_dset = data.get_dataset('celebahq', 'val', attribute, root=data_dir, transform=val_transform,
+#                                       fraction=2, data_seed=args.data_seed)  # data_seed randomizes here
+#         loader = DataLoader(clean_dset, batch_size=adv_batch_size, shuffle=False,
+#                             pin_memory=True, num_workers=4)
+#         x_val, y_val = next(iter(loader))  # [0, 1], 256x256
+#     else:
+#         raise NotImplementedError(f'Unknown domain: {args.domain}!')
 
-    print(f'x_val shape: {x_val.shape}')
-    x_val, y_val = x_val.contiguous().requires_grad_(True), y_val.contiguous()
-    print(f'x (min, max): ({x_val.min()}, {x_val.max()})')
+#     print(f'x_val shape: {x_val.shape}')
+#     x_val, y_val = x_val.contiguous().requires_grad_(True), y_val.contiguous()
+#     print(f'x (min, max): ({x_val.min()}, {x_val.max()})')
 
-    return x_val, y_val
+#     return x_val, y_val

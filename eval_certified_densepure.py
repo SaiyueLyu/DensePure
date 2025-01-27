@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from core import Smooth
 from datasets import get_dataset, DATASETS, get_num_classes, get_normalize_layer
 import utils
-from utils import str2bool, get_accuracy, get_image_classifier_certified, load_data
+from utils import str2bool, get_accuracy, get_image_classifier_certified
 from runners.diffpure_ddpm_densepure import Diffusion
 from runners.diffpure_guided_densepure import GuidedDiffusion
 import torchvision.utils as tvu
@@ -133,6 +133,7 @@ class DensePure_Certify(nn.Module):
             out = self.classifier(x_re)
 
         elif self.args.advanced_classifier=='beit':
+            print("using beit!!!!!!!!!!!")
             with torch.no_grad():
                 self.classifier.eval()
                 out = self.classifier(x_re)
