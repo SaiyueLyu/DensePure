@@ -9,9 +9,11 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, datasets
 from torchvision.datasets.utils import check_integrity
 from typing import *
-from zipdata import ZipData
+# from zipdata import ZipData
+from config_path import PathConfig
 
-IMAGENET_DIR = "/data1/saiyuel/cache/autoencoders/data/ILSVRC2012_validation/data"
+
+IMAGENET_DIR = PathConfig().get_imagenet_val_path()
 
 # list of all datasets
 DATASETS = ["imagenet", "imagenet32", "cifar10"]
