@@ -69,6 +69,7 @@ class GuidedDiffusion(torch.nn.Module):
 
             assert img.ndim == 4, img.ndim
             x0 = img
+            # print(f"img is {img.min()}, {img.max()}")
 
             x0 = self.scale*(img)
             t = self.t

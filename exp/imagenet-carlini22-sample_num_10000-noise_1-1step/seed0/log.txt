@@ -1,0 +1,5956 @@
+starting the model and loader...
+diffusion_type: guided-ddpm
+model_config: {'image_size': 256, 'num_channels': 256, 'num_res_blocks': 2, 'num_heads': 4, 'num_heads_upsample': -1, 'num_head_channels': 64, 'attention_resolutions': '32,16,8', 'channel_mult': '', 'dropout': 0.0, 'class_cond': False, 'use_checkpoint': False, 'use_scale_shift_norm': True, 'resblock_updown': True, 'use_fp16': True, 'use_new_attention_order': False, 'learn_sigma': True, 'diffusion_steps': 1000, 'noise_schedule': 'linear', 'timestep_respacing': '1000', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': True, 'rescale_learned_sigmas': False}
+/home/saiyuel/anaconda3/envs/denp/lib/python3.8/site-packages/torchvision/transforms/transforms.py:332: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+apply the attack to diffpure + classifier [L2]...
+diffusion times: 0
+Sampling time per batch: 00:25.52
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 5
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 10
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 15
+Sampling time per batch: 00:03.43
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 20
+Sampling time per batch: 00:03.43
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 25
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 30
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 35
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 40
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 45
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 50
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 55
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 60
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 65
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 70
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 75
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 80
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 85
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 90
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 95
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 100
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 105
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 110
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 115
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 120
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 125
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 130
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 135
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 140
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 145
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 150
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 155
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 160
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 165
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 170
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 175
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 180
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 185
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 190
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 195
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 200
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 205
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 210
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 215
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 220
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 225
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 230
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 235
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 240
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 245
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 250
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 255
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 260
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 265
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 270
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 275
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 280
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 285
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 290
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 295
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 300
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 305
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 310
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 315
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 320
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 325
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 330
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 335
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 340
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 345
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 350
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 355
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 360
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 365
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 370
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 375
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 380
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 385
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 390
+Sampling time per batch: 00:03.40
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 395
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 400
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 405
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 410
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 415
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 420
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 425
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 430
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 435
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 440
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 445
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 450
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 455
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 460
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 465
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 470
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 475
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 480
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 485
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 490
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 495
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 500
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 505
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 510
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 515
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 520
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 525
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 530
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 535
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 540
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 545
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 550
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 555
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 560
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 565
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 570
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 575
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 580
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 585
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 590
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 595
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 600
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 605
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 610
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 615
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 620
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 625
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 630
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 635
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 640
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 645
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 650
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 655
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 660
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 665
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 670
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 675
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 680
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 685
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 690
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 695
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 700
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 705
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 710
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 715
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 720
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 725
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 730
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 735
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 740
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 745
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 750
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 755
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 760
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 765
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 770
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 775
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 780
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 785
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 790
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 795
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 800
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 805
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 810
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 815
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 820
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 825
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 830
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 835
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 840
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 845
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 850
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 855
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 860
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 865
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 870
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 875
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 880
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 885
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 890
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 895
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 900
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 905
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 910
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 915
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 920
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 925
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 930
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 935
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 940
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 945
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 950
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 955
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 960
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 965
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 970
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 975
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 980
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 985
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 990
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 995
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1000
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1005
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1010
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1015
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1020
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1025
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1030
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1035
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1040
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1045
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1050
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1055
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1060
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1065
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1070
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1075
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1080
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1085
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1090
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1095
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1100
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1105
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1110
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1115
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1120
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1125
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1130
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1135
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1140
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1145
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1150
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1155
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1160
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1165
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1170
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1175
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1180
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1185
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1190
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1195
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1200
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1205
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1210
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1215
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1220
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1225
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1230
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1235
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1240
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1245
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1250
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1255
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1260
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1265
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1270
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1275
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1280
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1285
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1290
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1295
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1300
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1305
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1310
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1315
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1320
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1325
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1330
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1335
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1340
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1345
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1350
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1355
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1360
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1365
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1370
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1375
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1380
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1385
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1390
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1395
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1400
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1405
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1410
+Sampling time per batch: 00:03.40
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1415
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1420
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1425
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1430
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1435
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1440
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1445
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1450
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1455
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1460
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1465
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1470
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1475
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1480
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1485
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1490
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1495
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1500
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1505
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1510
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1515
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1520
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1525
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1530
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1535
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1540
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1545
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1550
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1555
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1560
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1565
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1570
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1575
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1580
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1585
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1590
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1595
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1600
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1605
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1610
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1615
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1620
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1625
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1630
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1635
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1640
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1645
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1650
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1655
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1660
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1665
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1670
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1675
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1680
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1685
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1690
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1695
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1700
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1705
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1710
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1715
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1720
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1725
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1730
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1735
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1740
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1745
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1750
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1755
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1760
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1765
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1770
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1775
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1780
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1785
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1790
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1795
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1800
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1805
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1810
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1815
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1820
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1825
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1830
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1835
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1840
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1845
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1850
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1855
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1860
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1865
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1870
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1875
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1880
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1885
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1890
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1895
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1900
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1905
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1910
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1915
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1920
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1925
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1930
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1935
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1940
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1945
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1950
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1955
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1960
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1965
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1970
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1975
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1980
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1985
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1990
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 1995
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2000
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2005
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2010
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2015
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2020
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2025
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2030
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2035
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2040
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2045
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2050
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2055
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2060
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2065
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2070
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2075
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2080
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2085
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2090
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2095
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2100
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2105
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2110
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2115
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2120
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2125
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2130
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2135
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2140
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2145
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2150
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2155
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2160
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2165
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2170
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2175
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2180
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2185
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2190
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2195
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2200
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2205
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2210
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2215
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2220
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2225
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2230
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2235
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2240
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2245
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2250
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2255
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2260
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2265
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2270
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2275
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2280
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2285
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2290
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2295
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2300
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2305
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2310
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2315
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2320
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2325
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2330
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2335
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2340
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2345
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2350
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2355
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2360
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2365
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2370
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2375
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2380
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2385
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2390
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2395
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2400
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2405
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2410
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2415
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2420
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2425
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2430
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2435
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2440
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2445
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2450
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2455
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2460
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2465
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2470
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2475
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2480
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2485
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2490
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2495
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2500
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2505
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2510
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2515
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2520
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2525
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2530
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2535
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2540
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2545
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2550
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2555
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2560
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2565
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2570
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2575
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2580
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2585
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2590
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2595
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2600
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2605
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2610
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2615
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2620
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2625
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2630
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2635
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2640
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2645
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2650
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2655
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2660
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2665
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2670
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2675
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2680
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2685
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2690
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2695
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2700
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2705
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2710
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2715
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2720
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2725
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2730
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2735
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2740
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2745
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2750
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2755
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2760
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2765
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2770
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2775
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2780
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2785
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2790
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2795
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2800
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2805
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2810
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2815
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2820
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2825
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2830
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2835
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2840
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2845
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2850
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2855
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2860
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2865
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2870
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2875
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2880
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2885
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2890
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2895
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2900
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2905
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2910
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2915
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2920
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2925
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2930
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2935
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2940
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2945
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2950
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2955
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2960
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2965
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2970
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2975
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2980
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2985
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2990
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 2995
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3000
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3005
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3010
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3015
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3020
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3025
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3030
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3035
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3040
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3045
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3050
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3055
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3060
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3065
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3070
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3075
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3080
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3085
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3090
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3095
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3100
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3105
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3110
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3115
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3120
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3125
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3130
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3135
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3140
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3145
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3150
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3155
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3160
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3165
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3170
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3175
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3180
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3185
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3190
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3195
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3200
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3205
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3210
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3215
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3220
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3225
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3230
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3235
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3240
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3245
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3250
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3255
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3260
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3265
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3270
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3275
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3280
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3285
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3290
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3295
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3300
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3305
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3310
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3315
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3320
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3325
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3330
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3335
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3340
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3345
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3350
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3355
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3360
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3365
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3370
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3375
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3380
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3385
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3390
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3395
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3400
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3405
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3410
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3415
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3420
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3425
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3430
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3435
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3440
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3445
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3450
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3455
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3460
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3465
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3470
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3475
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3480
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3485
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3490
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3495
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3500
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3505
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3510
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3515
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3520
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3525
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3530
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3535
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3540
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3545
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3550
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3555
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3560
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3565
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3570
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3575
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3580
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3585
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3590
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3595
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3600
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3605
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3610
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3615
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3620
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3625
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3630
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3635
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3640
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3645
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3650
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3655
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3660
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3665
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3670
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3675
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3680
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3685
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3690
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3695
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3700
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3705
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3710
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3715
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3720
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3725
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3730
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3735
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3740
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3745
+Sampling time per batch: 00:03.43
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3750
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3755
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3760
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3765
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3770
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3775
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3780
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3785
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3790
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3795
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3800
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3805
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3810
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3815
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3820
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3825
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3830
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3835
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3840
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3845
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3850
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3855
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3860
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3865
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3870
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3875
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3880
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3885
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3890
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3895
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3900
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3905
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3910
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3915
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3920
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3925
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3930
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3935
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3940
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3945
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3950
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3955
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3960
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3965
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3970
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3975
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3980
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3985
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3990
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 3995
+Sampling time per batch: 00:02.84
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4000
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4005
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4010
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4015
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4020
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4025
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4030
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4035
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4040
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4045
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4050
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4055
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4060
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4065
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4070
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4075
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4080
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4085
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4090
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4095
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4100
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4105
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4110
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4115
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4120
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4125
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4130
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4135
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4140
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4145
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4150
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4155
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4160
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4165
+Sampling time per batch: 00:02.85
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4170
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4175
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4180
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4185
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4190
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4195
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4200
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4205
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4210
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4215
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4220
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4225
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4230
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4235
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4240
+Sampling time per batch: 00:03.41
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+diffusion times: 4245
+Sampling time per batch: 00:03.42
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
+using beit!!!!!!!!!!!
