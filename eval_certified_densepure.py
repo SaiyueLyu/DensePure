@@ -79,9 +79,13 @@ class DensePure_Certify(nn.Module):
         self.tag = tag
 
     def forward(self, x, sample_id):
+        # print(x)
+        # print(x.shape)
+        # print(x.min().item(), x.max().item())
+        # print((2*x-1).min().item(), (2*x-1).max().item())
         counter = self.counter.item()
-        if counter % 5 == 0:
-            print(f'diffusion times: {counter}')
+        # if counter % 5 == 0:
+        #     print(f'diffusion times: {counter}')
 
         start_time = time()
         x_re = self.runner.image_editing_sample((x - 0.5) * 2, bs_id=counter, tag=self.tag)
@@ -92,14 +96,15 @@ class DensePure_Certify(nn.Module):
 
         if 'imagenet' in self.args.domain:
             if self.args.advanced_classifier=='beit':
+                # print(f"x_re is {x_re.min()}, {x_re.max()}")
                 x_re = F.interpolate(x_re, size=(512, 512), mode='bicubic')
             else:
                 x_re = F.interpolate(x_re, size=(224, 224), mode='bicubic')
 
-        if counter % 5 == 0:
+        # if counter % 5 == 0:
             # print(f'x shape (before diffusion models): {x.shape}')
             # print(f'x shape (before classifier): {x_re.shape}')
-            print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
+            # print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
 
         if self.args.advanced_classifier=='vit':
             self.classifier.eval()
@@ -133,7 +138,6 @@ class DensePure_Certify(nn.Module):
             out = self.classifier(x_re)
 
         elif self.args.advanced_classifier=='beit':
-            print("using beit!!!!!!!!!!!")
             with torch.no_grad():
                 self.classifier.eval()
                 out = self.classifier(x_re)
@@ -341,6 +345,9 @@ def purified_certify(model, dataset, args, config):
         for i in args.sample_id:
             (x, label) = dataset[i]
 
+            # print(f"shape is {x.shape}")
+
+
             before_time = time()
             # certify the prediction of g around x
             x = x.cuda()
@@ -484,7 +491,7 @@ def parse_args_and_config():
 
     # add device
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-    logging.info("Using device: {}".format(device))
+    # logging.info("Using device: {}".format(device))
     new_config.device = device
 
     # set random seed
@@ -501,5 +508,5 @@ def parse_args_and_config():
 
 if __name__ == '__main__':
     args, config = parse_args_and_config()
-    print(args)
+    # print(args)
     robustness_eval(args, config)

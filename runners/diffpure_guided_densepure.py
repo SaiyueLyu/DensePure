@@ -26,12 +26,11 @@ class GuidedDiffusion(torch.nn.Module):
         # load model
         model_config = model_and_diffusion_defaults()
         model_config.update(vars(self.config.model))
-        print(f'model_config: {model_config}')
+        # print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
         # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
         model_path = PathConfig().get_model_path()
-        model.load_state_dict(torch.load(model_path)
-        )
+        model.load_state_dict(torch.load(model_path))
         model.requires_grad_(False).eval().to(self.device)
 
         if model_config['use_fp16']:
@@ -52,7 +51,7 @@ class GuidedDiffusion(torch.nn.Module):
         # sigma_guide = ratio * sigma_jump
         jump_sigma = sigma * np.sqrt(1 + 1 / self.budget_jump_to_guiding_ratio ** 2) if self.budget_jump_to_guiding_ratio != 0 else sigma
         self.guide_sigma = sigma * np.sqrt(1 + self.budget_jump_to_guiding_ratio ** 2)
-        print(jump_sigma, self.guide_sigma)
+        print(f"jump sigma is {jump_sigma}, guide sigma is {self.guide_sigma}")
         print(np.sqrt(1/ (1 / jump_sigma ** 2 + 1/ self.guide_sigma ** 2)))
 
         a = 1/(1+(jump_sigma)**2)
@@ -75,9 +74,9 @@ class GuidedDiffusion(torch.nn.Module):
         batch_size = img.shape[0]
 
         with torch.no_grad():
-            if tag is None:
-                tag = 'rnd' + str(random.randint(0, 10000))
-            out_dir = os.path.join(self.args.log_dir, 'bs' + str(bs_id) + '_' + tag)
+            # if tag is None:
+            #     tag = 'rnd' + str(random.randint(0, 10000))
+            # out_dir = os.path.join(self.args.log_dir, 'bs' + str(bs_id) + '_' + tag)
 
             assert img.ndim == 4, img.ndim
             x0 = img
@@ -86,7 +85,8 @@ class GuidedDiffusion(torch.nn.Module):
             t = self.t
             img_scaled = x0
 
-            model_kwargs={"img" : img_scaled}
+            model_kwargs={"img" : img}
+            print(f"img is {img.min()}, {img.max()}")
 
             if self.args.use_clustering:
                 x0 = x0.unsqueeze(1).repeat(1,self.args.clustering_batch,1,1,1).view(batch_size*self.args.clustering_batch,3,256,256)
@@ -111,7 +111,7 @@ class GuidedDiffusion(torch.nn.Module):
                 for i in range(len(indices_t_steps)):
                     t = torch.tensor([len(indices_t_steps)-i-1] * x0.shape[0], device=self.device)
                     real_t = torch.tensor([indices_t_steps[i]] * x0.shape[0], device=self.device)
-                    # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
+                    print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
                     # at i=0, t is 9, real_t is 396, step is 10
                     # at i=1, t is 8, real_t is 356, step is 9
                     # at i=2, t is 7, real_t is 317, step is 8
@@ -156,12 +156,15 @@ class GuidedDiffusion(torch.nn.Module):
     def cond_fn(self, x, t, **kwargs):
         # scale = 2 * torch.ones(10).cuda()
         scale = 1 / (np.sqrt(self.args.num_t_steps - 1) * self.guide_sigma)
+        print(f"scale is {scale:.3f}")
         var = kwargs["var"]
         img = kwargs["img"]
+        print(f"x is {x.min()}, {x.max()}")
         guide = (img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
         # print(t[0].item())
         # breakpoint()
-        # print(guide.min().item(), guide.max().item())
+        print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
+        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}")
         return guide
 
 

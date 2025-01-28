@@ -14,4 +14,4 @@ model:
     use_fp16: True
     use_scale_shift_norm: True
     rescale_learned_sigmas: True # added by Saiyue
-budget_jump_to_guiding_ratio: 1
+budget_jump_to_guiding_ratio: 5

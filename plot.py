@@ -39,6 +39,7 @@ radii = np.arange(0, max_radius + radius_step, radius_step)
 
 df1 = pd.read_csv(args.logpath, delimiter="\t")
 # breakpoint()
+print(df1["correct"].value_counts()[1])
 line1 = np.array([at_radius(df1, radius) for radius in radii])
 print(line1[0])
 

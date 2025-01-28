@@ -123,6 +123,7 @@ class Smooth(object):
 
                 batch = x.repeat((this_batch_size, 1, 1, 1))
                 noise = torch.randn_like(batch, device='cuda') * self.sigma
+                # print((batch+noise).min())
 
                 if clustering_method == 'classifier':
                     predictions = self.base_classifier(batch + noise, sample_id).argmax(1)
