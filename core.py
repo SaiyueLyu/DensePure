@@ -106,7 +106,7 @@ class Smooth(object):
         else:
             return top2[0]
 
-    def _sample_noise(self, x: torch.tensor, num: int, batch_size, clustering_method='none', sample_id=None) -> np.ndarray:
+    def _sample_noise(self, x: torch.tensor, num: int, batch_size, clustering_method='none', sample_id=None, original_x=None) -> np.ndarray:
         """ Sample the base classifier's prediction under noisy corruptions of the input x.
 
         :param x: the input [channel x width x height]
@@ -123,10 +123,10 @@ class Smooth(object):
 
                 batch = x.repeat((this_batch_size, 1, 1, 1))
                 noise = torch.randn_like(batch, device='cuda') * self.sigma
-                # print((batch+noise).min())
+                # print(f" batch range {batch.min()}")
 
                 if clustering_method == 'classifier':
-                    predictions = self.base_classifier(batch + noise, sample_id).argmax(1)
+                    predictions = self.base_classifier(batch + noise, sample_id, original_x=batch).argmax(1)
                     predictions = predictions.view(this_batch_size,-1).cpu().numpy()
                     count_max_list = np.zeros(this_batch_size,dtype=int)
                     for i in range(this_batch_size):
@@ -135,7 +135,7 @@ class Smooth(object):
                     counts += self._count_arr(count_max_list, self.num_classes)
 
                 else:
-                    predictions = self.base_classifier(batch + noise, sample_id).argmax(1)
+                    predictions = self.base_classifier(batch + noise, sample_id, original_x=batch).argmax(1)
                     counts += self._count_arr(predictions.cpu().numpy(), self.num_classes)
                     predictions_all = np.hstack((predictions_all, predictions.cpu().numpy()))
             

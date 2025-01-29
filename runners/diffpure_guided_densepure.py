@@ -69,7 +69,7 @@ class GuidedDiffusion(torch.nn.Module):
             self.t = len(diffusion.alphas_cumprod)-1
         print(f"jump to step {t}")
 
-    def image_editing_sample(self, img=None, bs_id=0, tag=None):
+    def image_editing_sample(self, img=None, original_x=None, bs_id=0, tag=None):
         assert isinstance(img, torch.Tensor)
         batch_size = img.shape[0]
 
@@ -85,8 +85,8 @@ class GuidedDiffusion(torch.nn.Module):
             t = self.t
             img_scaled = x0
 
-            model_kwargs={"img" : img}
-            print(f"img is {img.min()}, {img.max()}")
+            model_kwargs={"img" :  2 * original_x - 1}
+            # print(f"img is {original_x.min()}, {original_x.max()}")
 
             if self.args.use_clustering:
                 x0 = x0.unsqueeze(1).repeat(1,self.args.clustering_batch,1,1,1).view(batch_size*self.args.clustering_batch,3,256,256)
@@ -111,7 +111,7 @@ class GuidedDiffusion(torch.nn.Module):
                 for i in range(len(indices_t_steps)):
                     t = torch.tensor([len(indices_t_steps)-i-1] * x0.shape[0], device=self.device)
                     real_t = torch.tensor([indices_t_steps[i]] * x0.shape[0], device=self.device)
-                    print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
+                    # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
                     # at i=0, t is 9, real_t is 396, step is 10
                     # at i=1, t is 8, real_t is 356, step is 9
                     # at i=2, t is 7, real_t is 317, step is 8
@@ -156,15 +156,15 @@ class GuidedDiffusion(torch.nn.Module):
     def cond_fn(self, x, t, **kwargs):
         # scale = 2 * torch.ones(10).cuda()
         scale = 1 / (np.sqrt(self.args.num_t_steps - 1) * self.guide_sigma)
-        print(f"scale is {scale:.3f}")
+        # print(f"scale is {scale:.3f}")
         var = kwargs["var"]
         img = kwargs["img"]
-        print(f"x is {x.min()}, {x.max()}")
+        # print(f"x is {x.min()}, {x.max()}")
         guide = (img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
         # print(t[0].item())
         # breakpoint()
-        print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
-        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}")
+        # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
+        # print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}")
         return guide
 
 

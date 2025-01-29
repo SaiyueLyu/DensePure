@@ -78,7 +78,8 @@ class DensePure_Certify(nn.Module):
     def set_tag(self, tag=None):
         self.tag = tag
 
-    def forward(self, x, sample_id):
+    def forward(self, x, sample_id, original_x):
+        # print(sample_id)
         # print(x)
         # print(x.shape)
         # print(x.min().item(), x.max().item())
@@ -87,8 +88,13 @@ class DensePure_Certify(nn.Module):
         # if counter % 5 == 0:
         #     print(f'diffusion times: {counter}')
 
+        # print(original_x.shape)
+        # print(original_x.min(), original_x.max())
+
         start_time = time()
-        x_re = self.runner.image_editing_sample((x - 0.5) * 2, bs_id=counter, tag=self.tag)
+        x_re = self.runner.image_editing_sample((x - 0.5) * 2, original_x, bs_id=counter,  tag=self.tag)
+        # print(x_re.min(), x_re.max())
+
         minutes, seconds = divmod(time() - start_time, 60)
 
         # if self.args.save_info:

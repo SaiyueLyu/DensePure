@@ -27,12 +27,18 @@ class PathConfig:
             "toolkit":{
                 "imagenet_val": "/mnt/home/ILSVRC2012_validation/data",
                 "model_ckpt": "/home/ubuntu/projects/256x256_diffusion_uncond.pt"
+            },
+            "ubuntu":{
+                "imagenet_val": "/home/ubuntu/imagenet_val",
+                "model_ckpt": "/home/ubuntu/256x256_diffusion_uncond.pt"
             }
         }
 
     def get_imagenet_val_path(self):
         if self.username == "toolkit": 
             return self.config["toolkit"]["imagenet_val"]
+        elif self.username == "ubuntu":
+            return self.config["ubuntu"]["imagenet_val"]
         elif self.username == "saiyuel": 
             return self.config["saiyuel"][self.hostname]["imagenet_val"]
         else :
@@ -41,6 +47,8 @@ class PathConfig:
     def get_model_path(self):
         if self.username == "toolkit": 
             return self.config["toolkit"]["model_ckpt"]
+        elif self.username == "ubuntu":
+            return self.config["ubuntu"]["model_ckpt"]
         elif self.username == "saiyuel": 
             return self.config["saiyuel"][self.hostname]["model_ckpt"]
         else :
