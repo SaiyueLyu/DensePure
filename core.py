@@ -126,7 +126,7 @@ class Smooth(object):
                 # print(f" batch range {batch.min()}")
 
                 if clustering_method == 'classifier':
-                    predictions = self.base_classifier(batch + noise, sample_id, original_x=batch).argmax(1)
+                    predictions = self.base_classifier(batch + noise, sample_id, batch).argmax(1)
                     predictions = predictions.view(this_batch_size,-1).cpu().numpy()
                     count_max_list = np.zeros(this_batch_size,dtype=int)
                     for i in range(this_batch_size):
@@ -135,7 +135,7 @@ class Smooth(object):
                     counts += self._count_arr(count_max_list, self.num_classes)
 
                 else:
-                    predictions = self.base_classifier(batch + noise, sample_id, original_x=batch).argmax(1)
+                    predictions = self.base_classifier(batch + noise, sample_id, batch).argmax(1)
                     counts += self._count_arr(predictions.cpu().numpy(), self.num_classes)
                     predictions_all = np.hstack((predictions_all, predictions.cpu().numpy()))
             

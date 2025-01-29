@@ -85,8 +85,10 @@ class GuidedDiffusion(torch.nn.Module):
             t = self.t
             img_scaled = x0
 
-            model_kwargs={"img" :  2 * original_x - 1}
-            # print(f"img is {original_x.min()}, {original_x.max()}")
+            rescaled_original_img = 2 * original_x - 1
+
+            model_kwargs={"img" :  rescaled_original_img}
+            # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
 
             if self.args.use_clustering:
                 x0 = x0.unsqueeze(1).repeat(1,self.args.clustering_batch,1,1,1).view(batch_size*self.args.clustering_batch,3,256,256)
@@ -160,6 +162,9 @@ class GuidedDiffusion(torch.nn.Module):
         var = kwargs["var"]
         img = kwargs["img"]
         # print(f"x is {x.min()}, {x.max()}")
+        # print(f"x shape is {x.shape}")
+        # print(f"img is {img.min()}, {img.max()}")
+        # print(f"img shape is {img.shape}")
         guide = (img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
         # print(t[0].item())
         # breakpoint()
