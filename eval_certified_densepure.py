@@ -399,7 +399,7 @@ def robustness_eval(args, config):
     log_dir = os.path.join(args.image_folder, 'seed' + str(args.seed))
     os.makedirs(log_dir, exist_ok=True)
     args.log_dir = log_dir
-    logger = utils.Logger(file_name=f'{log_dir}/log.txt', file_mode="w+", should_flush=True)
+    logger = utils.Logger(file_name=f'{log_dir}/terminallog.txt', file_mode="w+", should_flush=True)
 
     ngpus = torch.cuda.device_count()
 
@@ -445,6 +445,7 @@ def parse_args_and_config():
 
     # certified robustness
     parser.add_argument('--sigma', type=float, default=0.5, help='noise hyperparameter')
+    parser.add_argument('--budget_jump_to_guiding_ratio', type=float, default=1, help='ratio of splitting noise')
     parser.add_argument('--classifier_sigma', type=str, default=0.00, help='sigma for choosing classifier')
     parser.add_argument("--skip", type=int, default=1000, help="how many examples to skip")
     parser.add_argument("--max", type=int, default=-1, help="stop after this many examples")

@@ -15,13 +15,21 @@
 
 Above Does note work, check Carlini's repo and make the conda env, pip install additional lmdb etc:
  ```
-  conda create -n denp python=3.8 -y
-  conda activate denp
-  conda install pytorch==1.12.0 torchvision==0.13.0 cudatoolkit=11.3 -c pytorch
-  pip install timm transformers statsmodels
-  pip install lmdb
-  pip install blobfile
+conda create -n denp python=3.8 -y
+conda activate denp
+conda install pytorch==1.12.0 torchvision==0.13.0 cudatoolkit=11.3 -c pytorch
+pip install timm transformers statsmodels
+pip install lmdb
+pip install blobfile
  ```
+
+For Toolkit/LambdaCloud, do not use `conda install` (will have C++ issues), instead do:
+```
+conda create -n denp python=3.8 -y
+conda activate denp
+pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install timm transformers statsmodels
+```
 
 Then change model ckpt path in `runners/diffpure_guided_densepure.py` line 29. Change imagenet data path in `dataset.py`.
 

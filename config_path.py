@@ -26,7 +26,7 @@ class PathConfig:
             },
             "toolkit":{
                 "imagenet_val": "/mnt/home/ILSVRC2012_validation/data",
-                "model_ckpt": "/home/ubuntu/projects/256x256_diffusion_uncond.pt"
+                "model_ckpt": "/mnt/home/diffusion-ars/imagenet/256x256_diffusion_uncond.pt"
             },
             "ubuntu":{
                 "imagenet_val": "/home/ubuntu/imagenet_val",
@@ -42,7 +42,9 @@ class PathConfig:
         elif self.username == "saiyuel": 
             return self.config["saiyuel"][self.hostname]["imagenet_val"]
         else :
-            raise Exception("username or hostname not found in config")
+            # submit non-interactive jobs to toolkit 
+            return self.config["toolkit"]["imagenet_val"]
+            # raise Exception("username or hostname not found in config")
     
     def get_model_path(self):
         if self.username == "toolkit": 
@@ -52,7 +54,9 @@ class PathConfig:
         elif self.username == "saiyuel": 
             return self.config["saiyuel"][self.hostname]["model_ckpt"]
         else :
-            raise Exception("username or hostname not found in config")
+            # submit non-interactive jobs to toolkit 
+            return self.config["toolkit"]["model_ckpt"]
+            # raise Exception("username or hostname not found in config")
 
 
 # def main():
