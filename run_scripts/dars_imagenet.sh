@@ -14,7 +14,7 @@ python eval_certified_densepure.py \
 --seed $seed \
 --diffusion_type guided-ddpm \
 --lp_norm L2 \
---budget_jump_to_guiding_ratio 1 \
+--budget_jump_to_guiding_ratio $budget_jump_to_guiding_ratio \
 --outfile logs/imagenet/dars_sig$sigma-ratio$budget_jump_to_guiding_ratio/seed$seed/certify \
 --sigma $sigma \
 --N 10000 \
