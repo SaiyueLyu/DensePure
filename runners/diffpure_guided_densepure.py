@@ -17,6 +17,8 @@ class GuidedDiffusion(torch.nn.Module):
         self.args = args
         self.config = config
         self.budget_jump_to_guiding_ratio = float(args.budget_jump_to_guiding_ratio) if args.budget_jump_to_guiding_ratio!= 'inf' else np.inf
+        self.guide_scale = float(args.scale)
+        print(f"scale is {self.guide_scale}")
         if device is None:
             device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.device = device
@@ -155,17 +157,35 @@ class GuidedDiffusion(torch.nn.Module):
 
             return noisy_img
 
+    # def cond_fn(self, x, t, **kwargs):
+    #     # scale = 2 * torch.ones(10).cuda()
+    #     scale = 1 / (np.sqrt(self.args.num_t_steps) * self.guide_sigma)
+    #     # print(f"scale is {scale:.3f}")
+    #     var = kwargs["var"]
+    #     alpha = kwargs["alpha"]
+    #     rescaled_original_img = kwargs["img"]
+    #     # print(f"x is {x.min():.3f}, {x.max():.3f}")
+    #     # print(f"x shape is {x.shape}")
+    #     # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
+    #     # print(f"img shape is {rescaled_original_img.shape}")
+    #     guide = (alpha * rescaled_original_img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
+    #     # print(t[0].item())
+    #     # breakpoint()
+    #     # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
+    #     # print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
+    #     return guide
+
     def cond_fn(self, x, t, **kwargs):
         # scale = 2 * torch.ones(10).cuda()
-        scale = 1 / (np.sqrt(self.args.num_t_steps) * self.guide_sigma)
-        # print(f"scale is {scale:.3f}")
+        scale = self.guide_scale
+        # print(f"scale is {scale}")
         var = kwargs["var"]
         rescaled_original_img = kwargs["img"]
         # print(f"x is {x.min():.3f}, {x.max():.3f}")
         # print(f"x shape is {x.shape}")
         # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
         # print(f"img shape is {rescaled_original_img.shape}")
-        guide = (rescaled_original_img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
+        guide = (rescaled_original_img - x) * scale if t[0]!= 0 else torch.zeros_like(x)
         # print(t[0].item())
         # breakpoint()
         # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")

@@ -475,6 +475,9 @@ def parse_args_and_config():
     parser.add_argument('--clustering_batch', type=int, default=100)
     parser.add_argument("--clustering_method", type=str, default="none", help="classifier")
 
+    # scale
+    parser.add_argument("--scale", type=float, default=1, help="testing scale")
+
     args = parser.parse_args()
 
     # parse config file

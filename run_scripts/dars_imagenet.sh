@@ -7,9 +7,9 @@ budget_jump_to_guiding_ratio=$3
 seed=$4
 
 python eval_certified_densepure.py \
---exp logs/imagenet \
+--exp logs/friday \
 --config imagenet.yml \
--i dars_sig$sigma-ratio$budget_jump_to_guiding_ratio \
+-i scale_sig$sigma-ratio$budget_jump_to_guiding_ratio \
 --domain imagenet \
 --seed $seed \
 --diffusion_type guided-ddpm \
@@ -26,4 +26,5 @@ python eval_certified_densepure.py \
 --advanced_classifier beit \
 --use_t_steps \
 --num_t_steps $steps \
---reverse_seed 1
+--reverse_seed 1 \
+--scale 5
