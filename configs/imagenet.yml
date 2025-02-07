@@ -26,7 +26,7 @@ certify:
     N0: 100 
     N: 10000
     alpha: 0.001
-    batch_size: 12
+    batch_size: 120
 
 num_t_steps: 10  # numbers of reverse t steps
 scale: 5 # testing scale
