@@ -16,8 +16,8 @@ class GuidedDiffusion(torch.nn.Module):
         super().__init__()
         self.args = args
         self.config = config
-        self.budget_jump_to_guiding_ratio = float(args.budget_jump_to_guiding_ratio) if args.budget_jump_to_guiding_ratio!= 'inf' else np.inf
-        self.guide_scale = float(args.scale)
+        self.budget_jump_to_guiding_ratio = float(config.certify.budget_jump_to_guiding_ratio) if config.certify.budget_jump_to_guiding_ratio!= 'inf' else np.inf
+        self.guide_scale = float(config.scale)
         print(f"scale is {self.guide_scale}")
         if device is None:
             device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -27,7 +27,7 @@ class GuidedDiffusion(torch.nn.Module):
 
         # load model
         model_config = model_and_diffusion_defaults()
-        model_config.update(vars(self.config.model))
+        model_config.update(config.model)
         # print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
         # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
@@ -46,7 +46,7 @@ class GuidedDiffusion(torch.nn.Module):
         self.alphas_cumprod = np.cumprod(alphas, axis=0)
         self.sqrt_recipm1_alphas_cumprod = np.sqrt(1.0 / self.alphas_cumprod - 1)
 
-        sigma = self.args.sigma
+        sigma = self.config.certify.sigma
 
         sigma = sigma*2
 
@@ -59,7 +59,6 @@ class GuidedDiffusion(torch.nn.Module):
         a = 1/(1+(jump_sigma)**2)
         self.scale = a**0.5
 
-        T = self.args.t_total
         for t in range(len(self.sqrt_recipm1_alphas_cumprod)-1):
             if self.sqrt_recipm1_alphas_cumprod[t]<jump_sigma and self.sqrt_recipm1_alphas_cumprod[t+1]>=jump_sigma:
                 if jump_sigma - self.sqrt_recipm1_alphas_cumprod[t] > self.sqrt_recipm1_alphas_cumprod[t+1] - jump_sigma:
@@ -91,75 +90,49 @@ class GuidedDiffusion(torch.nn.Module):
             model_kwargs={"img" :  rescaled_original_img}
             # print(f"original img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
 
-            if self.args.use_clustering:
-                noisy_img = noisy_img.unsqueeze(1).repeat(1,self.args.clustering_batch,1,1,1).view(batch_size*self.args.clustering_batch,3,256,256)
+
             self.model.eval()
 
-            if self.args.use_one_step:
-                # one step denoise
-                t = torch.tensor([round(t)] * noisy_img.shape[0], device=self.device)
-                out = self.diffusion.p_sample(
-                    self.model,
-                    noisy_img,
-                    t+self.args.t_plus,
-                    clip_denoised=True,
-                )
-                noisy_img = out["pred_xstart"]
+            # t steps denoise
+            inter = t/self.config.num_t_steps # 396/10=39.6
+            indices_t_steps = [round(t-i*inter) for i in range(self.config.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
+            
+            for i in range(len(indices_t_steps)):
+                t = torch.tensor([len(indices_t_steps)-i-1] * noisy_img.shape[0], device=self.device)
+                real_t = torch.tensor([indices_t_steps[i]] * noisy_img.shape[0], device=self.device)
+                # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
+                # at i=0, t is 9, real_t is 396, step is 10
+                # at i=1, t is 8, real_t is 356, step is 9
+                # at i=2, t is 7, real_t is 317, step is 8
+                # at i=3, t is 6, real_t is 277, step is 7
+                # at i=4, t is 5, real_t is 238, step is 6
+                # at i=5, t is 4, real_t is 198, step is 5
+                # at i=6, t is 3, real_t is 158, step is 4
+                # at i=7, t is 2, real_t is 119, step is 3
+                # at i=8, t is 1, real_t is 79, step is 2
+                # at i=9, t is 0, real_t is 40, step is 1
+                # print(f"t before is {t[0].item()}")
 
-            elif self.args.use_t_steps:
-                # t steps denoise
-                inter = t/self.args.num_t_steps # 396/10=39.6
-                indices_t_steps = [round(t-i*inter) for i in range(self.args.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
-                
-                for i in range(len(indices_t_steps)):
-                    t = torch.tensor([len(indices_t_steps)-i-1] * noisy_img.shape[0], device=self.device)
-                    real_t = torch.tensor([indices_t_steps[i]] * noisy_img.shape[0], device=self.device)
-                    # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
-                    # at i=0, t is 9, real_t is 396, step is 10
-                    # at i=1, t is 8, real_t is 356, step is 9
-                    # at i=2, t is 7, real_t is 317, step is 8
-                    # at i=3, t is 6, real_t is 277, step is 7
-                    # at i=4, t is 5, real_t is 238, step is 6
-                    # at i=5, t is 4, real_t is 198, step is 5
-                    # at i=6, t is 3, real_t is 158, step is 4
-                    # at i=7, t is 2, real_t is 119, step is 3
-                    # at i=8, t is 1, real_t is 79, step is 2
-                    # at i=9, t is 0, real_t is 40, step is 1
-                    # print(f"t before is {t[0].item()}")
-                    with torch.no_grad():
-                        out = self.diffusion.p_sample(
-                            self.model,
-                            noisy_img,
-                            t,
-                            clip_denoised=True,
-                            cond_fn = self.cond_fn,
-                            model_kwargs = model_kwargs,
-                            indices_t_steps = indices_t_steps.copy(),
-                            T = self.args.t_total,
-                            step = len(indices_t_steps)-i,
-                            real_t = real_t
-                        )
-                        noisy_img = out["sample"]
-                        # print(f"x is {noisy_img.min():.3f}, {noisy_img.max():.3f}")
-            else:
-                # full steps denoise
-                indices = list(range(round(t)))[::-1]
-                for i in indices:
-                    t = torch.tensor([i] * noisy_img.shape[0], device=self.device)
-                    with torch.no_grad():
-                        out = self.diffusion.p_sample(
-                            self.model,
-                            noisy_img,
-                            t,
-                            clip_denoised=True,
-                        )
-                        noisy_img = out["sample"]
+                with torch.no_grad():
+                    out = self.diffusion.p_sample(
+                        self.model,
+                        noisy_img,
+                        t,
+                        clip_denoised=True,
+                        cond_fn = self.cond_fn,
+                        model_kwargs = model_kwargs,
+                        indices_t_steps = indices_t_steps.copy(),
+                        step = len(indices_t_steps)-i,
+                        real_t = real_t
+                    )
+                    noisy_img = out["sample"]
+                    # print(f"x is {noisy_img.min():.3f}, {noisy_img.max():.3f}")
 
             return noisy_img
 
     # def cond_fn(self, x, t, **kwargs):
     #     # scale = 2 * torch.ones(10).cuda()
-    #     scale = 1 / (np.sqrt(self.args.num_t_steps) * self.guide_sigma)
+    #     scale = 1 / (np.sqrt(self.config.num_t_steps) * self.guide_sigma)
     #     # print(f"scale is {scale:.3f}")
     #     var = kwargs["var"]
     #     alpha = kwargs["alpha"]

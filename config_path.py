@@ -7,8 +7,8 @@ class PathConfig:
     then provide the correct data path for each scenario.
     """
     def __init__(self):
-        self.hostname = socket.gethostname().lower() # e.g. nerds06; nerds07
         self.username = getpass.getuser() # e.g. saiyuel; toolkit
+        self.hostname = socket.gethostname().lower() # e.g. nerds06; nerds07
         self.config={
             "saiyuel":{
                 "nerds06":{
@@ -22,6 +22,10 @@ class PathConfig:
                 "nerds10":{
                     "imagenet_val": "/data1/saiyuel/cache/autoencoders/data/ILSVRC2012_validation/data",
                     "model_ckpt": "/data1/saiyuel/github/DensePure/256x256_diffusion_uncond.pt"
+                },
+                "aurora4.cs.ubc.ca":{
+                    "imagenet_val": "/scratch1/data/cache/autoencoders/data/ILSVRC2012_validation/data",
+                    "model_ckpt": "/scratch1/diffusion-ars/models/256x256_diffusion_uncond.pt"
                 }
             },
             "toolkit":{

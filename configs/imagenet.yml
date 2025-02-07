@@ -14,3 +14,23 @@ model:
     use_fp16: True
     use_scale_shift_norm: True
     rescale_learned_sigmas: True # added by Saiyue
+
+dataset:
+    domain : 'imagenet' 
+
+certify:
+    sigma: 1
+    budget_jump_to_guiding_ratio: 1 #ratio of splitting noise
+    # skip: 1000 # when using use_id, this part will not matter
+    # max: -1 # when using use_id, this part will not matter
+    N0: 100 
+    N: 10000
+    alpha: 0.001
+    batch_size: 12
+
+num_t_steps: 10  # numbers of reverse t steps
+scale: 5 # testing scale
+guide_type: 'easy'  #['easy', 'alpha', 'mu']
+scaling_type: 'var_s'  #['var_s', 's']
+
+    

@@ -399,7 +399,7 @@ class GaussianDiffusion:
         return out
 
     def p_sample(
-        self, model, x, t, clip_denoised=True, denoised_fn=None, cond_fn=None, model_kwargs=None, indices_t_steps=None, T=4000, step=None, real_t=None
+        self, model, x, t, clip_denoised=True, denoised_fn=None, cond_fn=None, model_kwargs=None, indices_t_steps=None, step=None, real_t=None
     ):
         """
         Sample x_{t-1} from the model at the given timestep.
