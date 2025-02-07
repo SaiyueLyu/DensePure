@@ -15,6 +15,7 @@ import utils
 from runners.diffpure_guided_densepure import GuidedDiffusion
 import timm
 from networks import *
+import getpass
 
 
 class DensePure_Certify(nn.Module):
@@ -109,6 +110,7 @@ def purified_certify(model, dataset, args, config):
 def robustness_eval(args, config, device):
     now = datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), now)
+    if args.toolkit : config.log_dir = os.path.join('/mnt/home/DensePure', config.log_dir)
     os.makedirs(config.log_dir, exist_ok=True)
     OmegaConf.save(config, os.path.join(config.log_dir, 'config.yaml'))
 
@@ -147,12 +149,15 @@ def parse_args_and_config():
     # diffusion models
     parser.add_argument('--seed', type=int, default=0, help='Random seed')
     parser.add_argument('--verbose', type=str, default='info', help='Verbose level: info | debug | warning | critical')
+    parser.add_argument('--toolkit', action='store_true', help='whether to use run on toolkit')
     
 
     args = parser.parse_args()
 
     # parse config file
-    config = OmegaConf.load(os.path.join('configs', 'imagenet.yml'))
+    yaml_path = os.path.join('configs', 'imagenet.yml')
+    if args.toolkit : yaml_path = os.path.join('/mnt/home/DensePure', yaml_path)
+    config = OmegaConf.load(yaml_path)
 
     level = getattr(logging, args.verbose.upper(), None)
     if not isinstance(level, int):

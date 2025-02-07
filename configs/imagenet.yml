@@ -29,7 +29,7 @@ certify:
     batch_size: 120
 
 num_t_steps: 10  # numbers of reverse t steps
-scale: 5 # testing scale
+scale: 8 # testing scale
 guide_type: 'easy'  #['easy', 'alpha', 'mu']
 scaling_type: 'var_s'  #['var_s', 's']
 
