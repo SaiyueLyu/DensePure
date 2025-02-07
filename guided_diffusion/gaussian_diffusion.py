@@ -363,9 +363,11 @@ class GaussianDiffusion:
         """
         # below two lines changed by Saiyue
         var = p_mean_var["variance"]
+        mu_t = p_mean_var["mean"]
         if real_t != None:
             sqrt_alpha = _extract_into_tensor(self.sqrt_alphas_cumprod, real_t, x.shape)
-            gradient = cond_fn(x, self._scale_timesteps(real_t),var=var, sqrt_alpha=sqrt_alpha, **model_kwargs)
+            sqrt_alpha_t_minus_one = _extract_into_tensor(self.sqrt_alphas_cumprod, real_t - 1, x.shape)
+            gradient = cond_fn(x, self._scale_timesteps(real_t),var=var, sqrt_alpha=sqrt_alpha, sqrt_alpha_t_minus_one=sqrt_alpha_t_minus_one, mu_t=mu_t,**model_kwargs)
         else: 
             sqrt_alpha = _extract_into_tensor(self.sqrt_alphas_cumprod, t, x.shape)
             gradient = cond_fn(x, self._scale_timesteps(t),var=var, sqrt_alpha=sqrt_alpha, **model_kwargs)
