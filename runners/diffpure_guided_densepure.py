@@ -134,13 +134,17 @@ class GuidedDiffusion(torch.nn.Module):
     #     scale = 1 / (np.sqrt(self.config.num_t_steps) * self.guide_sigma)
     #     # print(f"scale is {scale:.3f}")
     #     var = kwargs["var"]
-    #     alpha = kwargs["alpha"]
+    #     sqrt_alpha = kwargs["sqrt_alpha"]
+    #     sqrt_alpha_t_minus_one = kwargs["sqrt_alpha_t_minus_one"]
+    #     mean_t_minus_one = kwargs["mu_t"]
     #     rescaled_original_img = kwargs["img"]
+
     #     # print(f"x is {x.min():.3f}, {x.max():.3f}")
     #     # print(f"x shape is {x.shape}")
     #     # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
     #     # print(f"img shape is {rescaled_original_img.shape}")
-    #     guide = (alpha * rescaled_original_img - x) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
+    #     guide = (sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
+    #     # print(f"scale is {(scale / torch.sqrt(var)).min().item():.3f} and {(scale / torch.sqrt(var)).max().item():.3f}")
     #     # print(t[0].item())
     #     # breakpoint()
     #     # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
@@ -169,9 +173,9 @@ class GuidedDiffusion(torch.nn.Module):
         elif self.config.guide_type == 'mu':
             guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
         
-        if self.config.guide_type == 'var_s':
+        if self.config.scaling_type == 'var_s':
             guide = guide  * scale if t[0]!= 0 else torch.zeros_like(x)
-        elif self.config.guide_type == 's':
+        elif self.config.scaling_type == 's':
             guide = guide  * scale / var if t[0]!= 0 else torch.zeros_like(x)
 
         # print(t[0].item())

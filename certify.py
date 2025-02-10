@@ -3,7 +3,7 @@ import logging
 from omegaconf import OmegaConf
 import os
 from time import time
-from datetime import datetime
+import datetime
 import random
 import numpy as np
 import torch
@@ -108,7 +108,7 @@ def purified_certify(model, dataset, args, config):
 
 
 def robustness_eval(args, config, device):
-    now = datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+    now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), now)
     if args.toolkit : config.log_dir = os.path.join('/mnt/home/DensePure', config.log_dir)
     os.makedirs(config.log_dir, exist_ok=True)
