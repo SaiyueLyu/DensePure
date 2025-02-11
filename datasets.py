@@ -11,16 +11,9 @@ from torchvision.datasets.utils import check_integrity
 from typing import *
 from config_path import PathConfig
 
-<<<<<<< HEAD
 
 IMAGENET_DIR = PathConfig().get_imagenet_val_path()
 print(IMAGENET_DIR)
-=======
-from config_path import PathConfig
-
-
-IMAGENET_DIR = PathConfig().get_imagenet_val_path()
->>>>>>> fef430f074ff57aedaa291c62a05342967e83bed
 
 # list of all datasets
 DATASETS = ["imagenet", "imagenet32", "cifar10"]
