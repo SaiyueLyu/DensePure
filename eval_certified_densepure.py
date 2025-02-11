@@ -80,8 +80,8 @@ class DensePure_Certify(nn.Module):
 
     def forward(self, x, sample_id):
         counter = self.counter.item()
-        if counter % 5 == 0:
-            print(f'diffusion times: {counter}')
+        # if counter % 5 == 0:
+        #     print(f'diffusion times: {counter}')
 
         start_time = time()
         x_re = self.runner.image_editing_sample((x - 0.5) * 2, bs_id=counter, tag=self.tag, sigma=self.args.sigma)
@@ -96,10 +96,10 @@ class DensePure_Certify(nn.Module):
             else:
                 x_re = F.interpolate(x_re, size=(224, 224), mode='bicubic')
 
-        if counter % 5 == 0:
+        # if counter % 5 == 0:
             # print(f'x shape (before diffusion models): {x.shape}')
             # print(f'x shape (before classifier): {x_re.shape}')
-            print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
+            # print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
 
         if self.args.advanced_classifier=='vit':
             self.classifier.eval()
@@ -336,8 +336,14 @@ def purified_certify(model, dataset, args, config):
     print("idx\tlabel\tpredict\tradius\tcorrect\ttime", file=f, flush=True)
 
     # iterate through the dataset
+
+    seq=list(range(0,50000,1000))
+    arr = []
+    arr.append(seq[args.id_index])
+
     if args.use_id:
-        for i in args.sample_id:
+        for i in arr:
+            print(arr)
             (x, label) = dataset[i]
 
             before_time = time()
@@ -350,9 +356,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
     else:
@@ -375,9 +381,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
 
@@ -447,7 +453,7 @@ def parse_args_and_config():
     parser.add_argument('--use_one_step', action='store_true', help='whether to use one step denoise')
     parser.add_argument('--use_parallel', action='store_true', help='whether to use multi gpus to compute radius')
     parser.add_argument('--save_predictions', action='store_true', help='whether to save predictions')
-    parser.add_argument("--predictions_path", type=str, default='../npy', help="npy save file")
+    # parser.add_argument("--predictions_path", type=str, default='../npy', help="npy save file")
     parser.add_argument('--reverse_seed', type=int, default=0, help='reverse seed')
     parser.add_argument('--use_t_steps', action='store_true', help='whether to use t steps denoise')
     parser.add_argument('--num_t_steps', type=int, default=1, help='numbers of reverse t steps')
@@ -460,10 +466,13 @@ def parse_args_and_config():
     parser.add_argument('--clustering_batch', type=int, default=100)
     parser.add_argument("--clustering_method", type=str, default="none", help="classifier")
 
+    #v100
+    parser.add_argument('--id_index', type=int, default=0)
+
     args = parser.parse_args()
 
     # parse config file
-    with open(os.path.join('configs', args.config), 'r') as f:
+    with open(args.config, 'r') as f:
         config = yaml.safe_load(f)
     new_config = utils.dict2namespace(config)
 

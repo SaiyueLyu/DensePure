@@ -1,1 +1,4 @@
 *.pyc
+v100/
+exp/
+logs/
