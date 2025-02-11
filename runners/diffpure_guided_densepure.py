@@ -59,6 +59,9 @@ class GuidedDiffusion(torch.nn.Module):
                     break
             self.t = len(diffusion.alphas_cumprod)-1
 
+        print(f"stop at step {self.t}")
+        print(f"using sigma {sigma}")
+
     def image_editing_sample(self, img=None, bs_id=0, tag=None, sigma=0.0):
         assert isinstance(img, torch.Tensor)
         batch_size = img.shape[0]
