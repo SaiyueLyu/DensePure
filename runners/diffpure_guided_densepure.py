@@ -8,6 +8,8 @@ from guided_diffusion.script_util import create_model_and_diffusion, model_and_d
 import math
 import numpy as np
 
+from config_path import PathConfig
+
 
 class GuidedDiffusion(torch.nn.Module):
     def __init__(self, args, config, device=None, model_dir='pretrained'):
@@ -26,8 +28,7 @@ class GuidedDiffusion(torch.nn.Module):
         print(f'model_config: {model_config}')
         model, diffusion = create_model_and_diffusion(**model_config)
         # model.load_state_dict(torch.load(f'{model_dir}/256x256_diffusion_uncond.pt', map_location='cpu'))
-        model.load_state_dict(torch.load("/data1/saiyuel/projects/diffusion-ars/imagenet/256x256_diffusion_uncond.pt")
-        )
+        model_path = PathConfig().get_model_path()
         model.requires_grad_(False).eval().to(self.device)
 
         if model_config['use_fp16']:
