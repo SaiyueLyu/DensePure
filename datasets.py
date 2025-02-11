@@ -9,12 +9,11 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, datasets
 from torchvision.datasets.utils import check_integrity
 from typing import *
-from zipdata import ZipData
 
 from config_path import PathConfig
 
-
 IMAGENET_DIR = PathConfig().get_imagenet_val_path()
+print(IMAGENET_DIR)
 
 # list of all datasets
 DATASETS = ["imagenet", "imagenet32", "cifar10"]

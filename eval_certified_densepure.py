@@ -96,10 +96,10 @@ class DensePure_Certify(nn.Module):
             else:
                 x_re = F.interpolate(x_re, size=(224, 224), mode='bicubic')
 
-        if counter % 5 == 0:
-            # print(f'x shape (before diffusion models): {x.shape}')
-            # print(f'x shape (before classifier): {x_re.shape}')
-            print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
+        # if counter % 5 == 0:
+        #     print(f'x shape (before diffusion models): {x.shape}')
+        #     print(f'x shape (before classifier): {x_re.shape}')
+        #     print("Sampling time per batch: {:0>2}:{:05.2f}".format(int(minutes), seconds))
 
         if self.args.advanced_classifier=='vit':
             self.classifier.eval()
@@ -350,9 +350,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
     else:
@@ -375,9 +375,9 @@ def purified_certify(model, dataset, args, config):
             time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
             print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
                 i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-            if args.save_predictions:
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-                np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
         f.close()
 
 
