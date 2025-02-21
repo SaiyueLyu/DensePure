@@ -11,7 +11,7 @@ import numpy as np
 from config_path import PathConfig
 
 
-class GuidedDiffusion(torch.nn.Module):
+class GuidedDiffusionFilter(torch.nn.Module):
     def __init__(self, args, config, device=None, model_dir='pretrained'):
         super().__init__()
         self.args = args
@@ -88,7 +88,7 @@ class GuidedDiffusion(torch.nn.Module):
             # print(f"input img is {img.min():.3f}, {img.max():.3f}")
 
             rescaled_original_img = 2 * original_x - 1
-            model_kwargs={"img" :  rescaled_original_img}
+            model_kwargs={"img" :  rescaled_original_img, "stop": t}
             # print(f"original img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
 
 
@@ -112,10 +112,16 @@ class GuidedDiffusion(torch.nn.Module):
             inter = t/self.config.num_t_steps # 396/10=39.6
             indices_t_steps = [round(t-i*inter) for i in range(self.config.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
             
+            
+            self.sq_budget = 1 / (self.guide_sigma * self.guide_sigma)
+            # breakpoint()
+            print(f"total sq_budget is {self.sq_budget}")
+
+
             for i in range(len(indices_t_steps)):
                 t = torch.tensor([len(indices_t_steps)-i-1] * noisy_img.shape[0], device=self.device)
                 real_t = torch.tensor([indices_t_steps[i]] * noisy_img.shape[0], device=self.device)
-                # print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
+                print(f" at i={i}, t is {t[0].item()}, real_t is {real_t[0].item()}, step is {len(indices_t_steps)-i}")
                 # at i=0, t is 9, real_t is 396, step is 10
                 # at i=1, t is 8, real_t is 356, step is 9
                 # at i=2, t is 7, real_t is 317, step is 8
@@ -142,6 +148,12 @@ class GuidedDiffusion(torch.nn.Module):
                     )
                     noisy_img = out["sample"]
                     # print(f"x is {noisy_img.min():.3f}, {noisy_img.max():.3f}")
+
+                print(f"sq_budget is {self.sq_budget}")
+
+                if self.sq_budget <= 0:
+                    model_kwargs["stop"] = real_t[0]
+                    print(f"stop at {real_t[0].item()}")
             
 
             # self.reverse_state = torch.random.get_rng_state()
@@ -155,28 +167,6 @@ class GuidedDiffusion(torch.nn.Module):
             #     torch.cuda.random.set_rng_state_all(global_cuda_state)
 
             return noisy_img
-
-    # def cond_fn(self, x, t, **kwargs):
-    #     # scale = 2 * torch.ones(10).cuda()
-    #     scale = 1 / (np.sqrt(self.config.num_t_steps) * self.guide_sigma)
-    #     # print(f"scale is {scale:.3f}")
-    #     var = kwargs["var"]
-    #     sqrt_alpha = kwargs["sqrt_alpha"]
-    #     sqrt_alpha_t_minus_one = kwargs["sqrt_alpha_t_minus_one"]
-    #     mean_t_minus_one = kwargs["mu_t"]
-    #     rescaled_original_img = kwargs["img"]
-
-    #     # print(f"x is {x.min():.3f}, {x.max():.3f}")
-    #     # print(f"x shape is {x.shape}")
-    #     # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
-    #     # print(f"img shape is {rescaled_original_img.shape}")
-    #     guide = (sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one) * scale / torch.sqrt(var) if t[0]!= 0 else torch.zeros_like(x)
-    #     # print(f"scale is {(scale / torch.sqrt(var)).min().item():.3f} and {(scale / torch.sqrt(var)).max().item():.3f}")
-    #     # print(t[0].item())
-    #     # breakpoint()
-    #     # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
-    #     # print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
-    #     return guide
 
     def cond_fn(self, x, t, **kwargs):
         # scale = 2 * torch.ones(10).cuda()
@@ -192,6 +182,22 @@ class GuidedDiffusion(torch.nn.Module):
         # print(f"x shape is {x.shape}")
         # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
         # print(f"img shape is {rescaled_original_img.shape}")
+
+        
+        # accounting
+        max_var = torch.max(var)
+        mu_squared = (scale * scale) / max_var
+        print(f"current used mu square is : {mu_squared}")
+        if mu_squared > self.sq_budget:
+            scale = torch.sqrt(self.sq_budget * max_var)
+            self.sq_budget = 0
+        else:
+            self.sq_budget -= mu_squared
+
+        if t[0] < kwargs["stop"] : scale = 0
+
+        print(f"guiding scale for step {t[0]}: {scale}")
+
 
         if self.config.guide_type == 'easy':
             guide = rescaled_original_img - x
@@ -209,10 +215,10 @@ class GuidedDiffusion(torch.nn.Module):
         else:
             raise Exception("error in scaling_type, check config")
 
-        # print(t[0].item())
+        print(t[0].item())
         # breakpoint()
-        # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
-        # print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
+        print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
+        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
         return guide
 
 

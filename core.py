@@ -11,7 +11,7 @@ class Smooth(object):
     # to abstain, Smooth returns this int
     ABSTAIN = -1
 
-    def __init__(self, base_classifier: torch.nn.Module, num_classes: int, sigma: float):
+    def __init__(self, base_classifier: torch.nn.Module, num_classes: int, sigma: float, budget_jump_to_guiding_ratio: float):
         """
         :param base_classifier: maps from [batch x channel x height x width] to [batch x num_classes]
         :param num_classes:
@@ -20,6 +20,14 @@ class Smooth(object):
         self.base_classifier = base_classifier
         self.num_classes = num_classes
         self.sigma = sigma
+        # added by Saiyue for our method
+        self.budget_jump_to_guiding_ratio = budget_jump_to_guiding_ratio
+        # sigma_guide = ratio * sigma_jump
+        self.jump_sigma = self.sigma * np.sqrt(1 + 1 / self.budget_jump_to_guiding_ratio ** 2) if self.budget_jump_to_guiding_ratio != 0 else self.sigma
+        self.guide_sigma = self.sigma * np.sqrt(1 + self.budget_jump_to_guiding_ratio ** 2)
+        print(f"jump sigma is {self.jump_sigma}, guide sigma is {self.guide_sigma}")
+        print(np.sqrt(1/ (1 / self.jump_sigma ** 2 + 1/ self.guide_sigma ** 2)))
+        print(f"adding noise with sigma {self.jump_sigma}")
 
     def certify(self, x: torch.tensor, n0: int, n: int, sample_id:int, alpha: float, batch_size: int, clustering_method='none') -> (int, float):
         """ Monte Carlo algorithm for certifying that g's prediction around x is constant within some L2 radius.
@@ -122,7 +130,7 @@ class Smooth(object):
                 num -= this_batch_size
 
                 batch = x.repeat((this_batch_size, 1, 1, 1))
-                noise = torch.randn_like(batch, device='cuda') * self.sigma
+                noise = torch.randn_like(batch, device='cuda') * self.jump_sigma
                 # print(batch.shape)
                 # print(f"self sigma is {self.sigma}")
                 # print(f" batch range {batch.min()}")

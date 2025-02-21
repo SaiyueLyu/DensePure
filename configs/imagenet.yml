@@ -26,11 +26,9 @@ certify:
     N0: 100 
     N: 10000
     alpha: 0.001
-    batch_size: 120
+    batch_size: 20 #120
 
 num_t_steps: 10  # numbers of reverse t steps
-scale: 8 # testing scale
-guide_type: 'easy'  #['easy', 'alpha', 'mu']
-scaling_type: 'var_s'  #['var_s', 's']
-
-    
+scale: 0.1 # testing scale
+guide_type: 'mu'  #['easy', 'alpha', 'mu']
+scaling_type: 's'  #['var_s', 's']

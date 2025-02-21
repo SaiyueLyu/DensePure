@@ -13,6 +13,7 @@ from core import Smooth
 from datasets import get_dataset, DATASETS, get_num_classes
 import utils
 from runners.diffpure_guided_densepure import GuidedDiffusion
+from runners.filter import GuidedDiffusionFilter
 import timm
 from networks import *
 import getpass
@@ -26,7 +27,8 @@ class DensePure_Certify(nn.Module):
 
         self.classifier = timm.create_model('beit_large_patch16_512', pretrained=True).cuda()
         self.classifier.eval()
-        self.runner = GuidedDiffusion(args, config)
+        # self.runner = GuidedDiffusion(args, config)
+        self.runner = GuidedDiffusionFilter(args, config)
 
         # self.register_buffer('counter', torch.zeros(1, device=config.device))
         self.tag = None
@@ -80,36 +82,68 @@ def purified_certify(model, dataset, args, config):
         model_ = model.module
 
     model_.reset_counter()
-    smoothed_classifier_diffpure = Smooth(model, get_num_classes(config.dataset.domain), config.certify.sigma)
+    smoothed_classifier_diffpure = Smooth(model, get_num_classes(config.dataset.domain), config.certify.sigma, config.certify.budget_jump_to_guiding_ratio)
     file_path = os.path.join(config.log_dir, 'certify')
     f = open(file_path, 'w')
     print("idx\tlabel\tpredict\tradius\tcorrect\ttime", file=f, flush=True)
 
-    for i in range(0, 49001, 1000):
-        (x, label) = dataset[i]
 
-        # print(f"shape is {x.shape}")
+    if args.v100:
+        seq=list(range(0,50000,1000))
+        arr = []
+        arr.append(seq[args.id_index])
+
+        for i in arr:
+            print(arr)
+            (x, label) = dataset[i]
+
+            # print(f"shape is {x.shape}")
 
 
-        before_time = time()
-        # certify the prediction of g around x
-        x = x.cuda()
-        label = torch.tensor(label,dtype=torch.int).cuda()
-        prediction, radius, n0_predictions, n_predictions = smoothed_classifier_diffpure.certify(x, config.certify.N0, config.certify.N, i, config.certify.alpha, config.certify.batch_size, clustering_method=None)
-        after_time = time()
-        correct = int(prediction == label)
-        time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
-        print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
-            i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
-        # if args.save_predictions:
-        #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
-        #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
-    f.close()
+            before_time = time()
+            # certify the prediction of g around x
+            x = x.cuda()
+            label = torch.tensor(label,dtype=torch.int).cuda()
+            prediction, radius, n0_predictions, n_predictions = smoothed_classifier_diffpure.certify(x, config.certify.N0, config.certify.N, i, config.certify.alpha, config.certify.batch_size, clustering_method=None)
+            after_time = time()
+            correct = int(prediction == label)
+            time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
+            print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
+                i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+        f.close()
+    else :
+        for i in range(0, 49001, 1000):
+            (x, label) = dataset[i]
+
+            # print(f"shape is {x.shape}")
+
+
+            before_time = time()
+            # certify the prediction of g around x
+            x = x.cuda()
+            label = torch.tensor(label,dtype=torch.int).cuda()
+            prediction, radius, n0_predictions, n_predictions = smoothed_classifier_diffpure.certify(x, config.certify.N0, config.certify.N, i, config.certify.alpha, config.certify.batch_size, clustering_method=None)
+            after_time = time()
+            correct = int(prediction == label)
+            time_elapsed = str(datetime.timedelta(seconds=(after_time - before_time)))
+            print("{}\t{}\t{}\t{:.3}\t{}\t{}".format(
+                i, label, prediction, radius, correct, time_elapsed), file=f, flush=True)
+            # if args.save_predictions:
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n0_predictions.npy',n0_predictions)
+            #     np.save(args.predictions_path+str(i)+'-'+str(args.reverse_seed)+'-n_predictions.npy',n_predictions)
+        f.close()
 
 
 def robustness_eval(args, config, device):
     now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
-    config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), now)
+    if args.v100: 
+        ind = f"{args.id_index:02d}"
+        config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), 'v100', ind)
+    else:
+        config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), now)
     if args.toolkit : config.log_dir = os.path.join('/mnt/home/DensePure', config.log_dir)
     os.makedirs(config.log_dir, exist_ok=True)
     OmegaConf.save(config, os.path.join(config.log_dir, 'config.yaml'))
@@ -149,7 +183,9 @@ def parse_args_and_config():
     # diffusion models
     parser.add_argument('--seed', type=int, default=0, help='Random seed')
     parser.add_argument('--verbose', type=str, default='info', help='Verbose level: info | debug | warning | critical')
-    parser.add_argument('--toolkit', action='store_true', help='whether to use run on toolkit')
+    parser.add_argument('--toolkit', action='store_true', help='whether to use run on toolkit, if not appear, default is False')
+    parser.add_argument('--v100', action='store_true', help='whether to use v100, if not appear, default is False')
+    parser.add_argument('--id_index', type=int, default=0, help='only used when using v100')
     
 
     args = parser.parse_args()
