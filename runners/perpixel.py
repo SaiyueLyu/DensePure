@@ -180,8 +180,8 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         mean_t_minus_one = kwargs["mu_t"]
         rescaled_original_img = kwargs["img"]
 
-        # print(f"alpha t coeff is {sqrt_alpha.min()}, {sqrt_alpha.max()}")
-        # print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
+        print(f"alpha t coeff is {sqrt_alpha.min()}, {sqrt_alpha.max()}")
+        print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
         # print(f"x is {x.min():.3f}, {x.max():.3f}")
         # print(f"x shape is {x.shape}")
         # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
@@ -193,7 +193,6 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         elif self.config.guide_type == 'alpha':
             mu_squared = scale * scale * sqrt_alpha * sqrt_alpha
         elif self.config.guide_type == 'mu':
-            guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
             mu_squared = scale * scale * sqrt_alpha_t_minus_one * sqrt_alpha_t_minus_one
         else:
             raise Exception("error in guide_type, check config")
@@ -255,7 +254,7 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         # print(t[0].item())
         # breakpoint()
         # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
-        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
+        print(f"guide value is {guide.min().item()}, {guide.max().item()}\n")
         return guide
 
 
