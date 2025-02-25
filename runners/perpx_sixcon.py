@@ -11,7 +11,7 @@ import numpy as np
 from config_path import PathConfig
 
 
-class GuidedDiffusionFilterPerPixel(torch.nn.Module):
+class GuidedDiffusionFilterPerPixelSixCon(torch.nn.Module):
     def __init__(self, args, config, device=None, model_dir='pretrained'):
         super().__init__()
         self.args = args
@@ -179,6 +179,8 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         sqrt_alpha_t_minus_one = kwargs["sqrt_alpha_t_minus_one"]
         mean_t_minus_one = kwargs["mu_t"]
         rescaled_original_img = kwargs["img"]
+        sqrt_alpha_tensor = (torch.ones_like(x) * sqrt_alpha)
+        sqrt_alpha_t_minus_one_tensor = (torch.ones_like(x) * sqrt_alpha_t_minus_one)
 
         # print(f"alpha t coeff is {sqrt_alpha.min()}, {sqrt_alpha.max()}")
         # print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
@@ -187,64 +189,87 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
         # print(f"img shape is {rescaled_original_img.shape}")
 
-        # accounting
-        if self.config.guide_type == 'easy':
-            mu_squared = scale * scale
-        elif self.config.guide_type == 'alpha':
-            mu_squared = scale * scale * sqrt_alpha * sqrt_alpha
-        elif self.config.guide_type == 'mu':
-            mu_squared = scale * scale * sqrt_alpha_t_minus_one * sqrt_alpha_t_minus_one
-        else:
-            raise Exception("error in guide_type, check config")
-
-        if self.config.scaling_type == 'var_s':
-            mu_squared = mu_squared * var
-        elif self.config.scaling_type == 's':
-            mu_squared = mu_squared / var
-        else:
-            raise Exception("error in scaling_type, check config")
-
-
-        # print(f"current used mu square is : {mu_squared}")
-        # print(f"sq_budget is {self.sq_budget}")
-        out_of_budget_mask = mu_squared > self.sq_budget
-        sqrt_alpha_tensor = (torch.ones_like(x) * sqrt_alpha)
-        sqrt_alpha_t_minus_one_tensor = (torch.ones_like(x) * sqrt_alpha_t_minus_one)
-    
-
-        if self.config.scaling_type == 'var_s':
+        if self.config.guide_type == 'easy' and self.config.scaling_type == 'var_s':
+            mu_squared = scale * scale * var
+            out_of_budget_mask = mu_squared > self.sq_budget
             scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] / var[out_of_budget_mask])
-        elif self.config.scaling_type == 's':
-            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])
-        # else:
-        #     raise Exception("error in scaling_type, check config")
-
-
-        if self.config.guide_type == 'easy':
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
             guide = rescaled_original_img - x
-        elif self.config.guide_type == 'alpha':
+            guide = guide * scale if t[0]!= 0 else torch.zeros_like(x)
+        elif self.config.guide_type == 'easy' and self.config.scaling_type == 's':
+            mu_squared = scale * scale / var
+            out_of_budget_mask = mu_squared > self.sq_budget
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
+            guide = rescaled_original_img - x
+            guide = guide * scale / var if t[0]!= 0 else torch.zeros_like(x)
+        elif self.config.guide_type == 'alpha' and self.config.scaling_type == 'var_s':
+            mu_squared = scale * scale * sqrt_alpha * sqrt_alpha * var
+            out_of_budget_mask = mu_squared > self.sq_budget
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] / var[out_of_budget_mask])/ sqrt_alpha_tensor[out_of_budget_mask]
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
             guide = sqrt_alpha * rescaled_original_img - x
-            scale[out_of_budget_mask] = scale[out_of_budget_mask] / sqrt_alpha_tensor[out_of_budget_mask]
-        elif self.config.guide_type == 'mu':
+            guide = guide * scale if t[0]!= 0 else torch.zeros_like(x)
+        elif self.config.guide_type == 'alpha' and self.config.scaling_type == 's':
+            mu_squared = scale * scale * sqrt_alpha * sqrt_alpha / var
+            out_of_budget_mask = mu_squared > self.sq_budget
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])/ sqrt_alpha_tensor[out_of_budget_mask]
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
+            guide = sqrt_alpha * rescaled_original_img - x
+            guide = guide * scale / var if t[0]!= 0 else torch.zeros_like(x)
+        elif self.config.guide_type == 'mu' and self.config.scaling_type == 'var_s':
+            mu_squared = scale * scale * sqrt_alpha_t_minus_one * sqrt_alpha_t_minus_one * var
+            out_of_budget_mask = mu_squared > self.sq_budget
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] / var[out_of_budget_mask])/ sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
             guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
-            scale[out_of_budget_mask] = scale[out_of_budget_mask] / sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
+            guide = guide * scale if t[0]!= 0 else torch.zeros_like(x)
+        elif self.config.guide_type == 'mu' and self.config.scaling_type == 's':
+            mu_squared = scale * scale * sqrt_alpha_t_minus_one * sqrt_alpha_t_minus_one / var
+            # print(f"current used mu square is : {mu_squared}")
+            # print(f"sq_budget is {self.sq_budget}")
+            out_of_budget_mask = mu_squared > self.sq_budget
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])/ sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
+            self.sq_budget[out_of_budget_mask] = 0
+            self.filter[out_of_budget_mask] = False
+            self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+            if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
+            guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
+            guide = guide * scale / var if t[0]!= 0 else torch.zeros_like(x)
+
+        print(f"guiding scale for step {t[0]}: {scale.max().item()}")
+
+        # if self.config.guide_type == 'easy':
+        #     guide = rescaled_original_img - x
+        # elif self.config.guide_type == 'alpha':
+        #     guide = sqrt_alpha * rescaled_original_img - x
+        # elif self.config.guide_type == 'mu':
+        #     guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
         # else:
         #     raise Exception("error in guide_type, check config")
 
 
-        self.sq_budget[out_of_budget_mask] = 0
-        self.filter[out_of_budget_mask] = False
-        self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
-        if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
-
-
-        if self.config.scaling_type == 'var_s':
-            guide = guide  * scale if t[0]!= 0 else torch.zeros_like(x)
-
-        elif self.config.scaling_type == 's':
-            guide = guide  * scale / var if t[0]!= 0 else torch.zeros_like(x)
-
-        print(f"guiding scale for step {t[0]}: {scale.max().item()}")
+        # if self.config.scaling_type == 'var_s':
+        #     guide = guide  * scale if t[0]!= 0 else torch.zeros_like(x)
+        # elif self.config.scaling_type == 's':
+        #     guide = guide  * scale / var if t[0]!= 0 else torch.zeros_like(x)
+        # else:
+        #     raise Exception("error in scaling_type, check config")
 
         # print(t[0].item())
         # breakpoint()
