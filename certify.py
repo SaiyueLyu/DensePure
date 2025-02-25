@@ -14,6 +14,8 @@ from datasets import get_dataset, DATASETS, get_num_classes
 import utils
 from runners.diffpure_guided_densepure import GuidedDiffusion
 from runners.filter import GuidedDiffusionFilter
+from runners.perpixel import GuidedDiffusionFilterPerPixel
+from runners.perpx_sixcon import GuidedDiffusionFilterPerPixelSixCon
 import timm
 from networks import *
 import getpass
@@ -28,7 +30,9 @@ class DensePure_Certify(nn.Module):
         self.classifier = timm.create_model('beit_large_patch16_512', pretrained=True).cuda()
         self.classifier.eval()
         # self.runner = GuidedDiffusion(args, config)
-        self.runner = GuidedDiffusionFilter(args, config)
+        # self.runner = GuidedDiffusionFilter(args, config)
+        self.runner = GuidedDiffusionFilterPerPixel(args, config)
+        # self.runner = GuidedDiffusionFilterPerPixelSixCon(args, config)
 
         # self.register_buffer('counter', torch.zeros(1, device=config.device))
         self.tag = None
@@ -141,7 +145,7 @@ def robustness_eval(args, config, device):
     now = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     if args.v100: 
         ind = f"{args.id_index:02d}"
-        config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), 'v100', ind)
+        config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), 'v100_Feb24', ind)
     else:
         config.log_dir = os.path.join("logs", config.guide_type, config.scaling_type, "scale"+str(config.scale), now)
     if args.toolkit : config.log_dir = os.path.join('/mnt/home/DensePure', config.log_dir)

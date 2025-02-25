@@ -366,7 +366,14 @@ class GaussianDiffusion:
         mu_t = p_mean_var["mean"]
         if real_t != None:
             sqrt_alpha = _extract_into_tensor(self.sqrt_alphas_cumprod, real_t, x.shape)
-            sqrt_alpha_t_minus_one = _extract_into_tensor(self.sqrt_alphas_cumprod, indices_t_steps[1:][t[0].item()-1] * th.ones_like(real_t) , x.shape) #TODO check
+            # breakpoint()
+            # print(self.betas)
+            # print(indices_t_steps)
+            # print(indices_t_steps[1:])
+            # print(f"t is {t[0].item()}")
+            # print(f"indice is {indices_t_steps[1:][t[0].item()-1]}")
+            sqrt_alpha_t_minus_one = _extract_into_tensor(self.sqrt_alphas_cumprod, indices_t_steps[t[0].item()] * th.ones_like(real_t) , x.shape) #TODO check
+            # sqrt_alpha_t_minus_one = _extract_into_tensor(self.sqrt_alphas_cumprod, indices_t_steps[1:][t[0].item()-1] * th.ones_like(real_t) , x.shape) #TODO check
             gradient = cond_fn(x, self._scale_timesteps(real_t),var=var, sqrt_alpha=sqrt_alpha, sqrt_alpha_t_minus_one=sqrt_alpha_t_minus_one, mu_t=mu_t,**model_kwargs)
         else: 
             sqrt_alpha = _extract_into_tensor(self.sqrt_alphas_cumprod, t, x.shape)
@@ -419,10 +426,17 @@ class GaussianDiffusion:
                  - 'pred_xstart': a prediction of x_0.
         """
         if indices_t_steps!=None:
-            if step==len(indices_t_steps):
+            # breakpoint()
+            # print("indices_t_step is not None")
+            # print(f"step is {step}")
+            # print(f"length is {len(indices_t_steps)}")
+            indices_t_steps.append(0)
+            indices_t_steps = indices_t_steps[::-1]
+
+            if step==len(indices_t_steps)-1:
                 betas = []
-                indices_t_steps.append(0)
-                indices_t_steps = indices_t_steps[::-1]
+                # indices_t_steps.append(0)
+                # indices_t_steps = indices_t_steps[::-1]
                 for i in range(len(indices_t_steps)-1):
                     t1 = indices_t_steps[i]
                     t2 = indices_t_steps[i+1]

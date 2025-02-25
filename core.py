@@ -147,7 +147,7 @@ class Smooth(object):
                 else:
                     # print(f"noise is {(noise).min():.3f}, {(noise).max():.3f}")
                     # print(f"img is {(batch).min():.3f}, {(batch).max():.3f}")
-                    # print(f"noisy img is {(batch + noise).min():.3f}, {(batch + noise).max():.3f}")
+                    # print(f"noisy img is {(batch + noise).min():.3f}, {(batch + noise).max():.3f}")  # [0,1]
                     predictions = self.base_classifier(batch + noise, sample_id, batch).argmax(1)
                     counts += self._count_arr(predictions.cpu().numpy(), self.num_classes)
                     predictions_all = np.hstack((predictions_all, predictions.cpu().numpy()))

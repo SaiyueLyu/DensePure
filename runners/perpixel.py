@@ -11,7 +11,7 @@ import numpy as np
 from config_path import PathConfig
 
 
-class GuidedDiffusionFilter(torch.nn.Module):
+class GuidedDiffusionFilterPerPixel(torch.nn.Module):
     def __init__(self, args, config, device=None, model_dir='pretrained'):
         super().__init__()
         self.args = args
@@ -113,9 +113,11 @@ class GuidedDiffusionFilter(torch.nn.Module):
             indices_t_steps = [round(t-i*inter) for i in range(self.config.num_t_steps)] #[396, 356, 317, 277, 238, 198, 158, 119, 79, 40]
             
             
-            self.sq_budget = 1 / (self.guide_sigma * self.guide_sigma)
+            self.sq_guiding_budget = 1 / (self.guide_sigma * self.guide_sigma)
             # breakpoint()
-            # print(f"total sq_budget is {self.sq_budget}")
+            # print(f"total sq_budget is {self.sq_guiding_budget}")
+            self.sq_budget = (torch.ones_like(img) * self.sq_guiding_budget)
+            self.filter = torch.ones_like(img, dtype=torch.bool)
 
 
             for i in range(len(indices_t_steps)):
@@ -151,7 +153,7 @@ class GuidedDiffusionFilter(torch.nn.Module):
 
                 # print(f"sq_budget is {self.sq_budget}")
 
-                if self.sq_budget <= 0:
+                if torch.sum(self.filter) == 0:
                     model_kwargs["stop"] = real_t[0]
                     # print(f"stop at {real_t[0].item()}")
             
@@ -169,58 +171,91 @@ class GuidedDiffusionFilter(torch.nn.Module):
             return noisy_img
 
     def cond_fn(self, x, t, **kwargs):
-        # scale = 2 * torch.ones(10).cuda()
-        scale = self.guide_scale
+        scale = (torch.ones_like(x) * self.guide_scale)
+        scale[~self.filter] = 0
         # print(f"scale is {scale}")
         var = kwargs["var"]
         sqrt_alpha = kwargs["sqrt_alpha"]
         sqrt_alpha_t_minus_one = kwargs["sqrt_alpha_t_minus_one"]
         mean_t_minus_one = kwargs["mu_t"]
-
         rescaled_original_img = kwargs["img"]
+
+        # print(f"alpha t coeff is {sqrt_alpha.min()}, {sqrt_alpha.max()}")
+        # print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
         # print(f"x is {x.min():.3f}, {x.max():.3f}")
         # print(f"x shape is {x.shape}")
         # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
         # print(f"img shape is {rescaled_original_img.shape}")
 
-        
         # accounting
-        min_var = torch.min(var)
-        mu_squared = (scale * scale) / min_var
+        if self.config.guide_type == 'easy':
+            mu_squared = scale * scale
+        elif self.config.guide_type == 'alpha':
+            mu_squared = scale * scale * sqrt_alpha * sqrt_alpha
+        elif self.config.guide_type == 'mu':
+            guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
+            mu_squared = scale * scale * sqrt_alpha_t_minus_one * sqrt_alpha_t_minus_one
+        else:
+            raise Exception("error in guide_type, check config")
+
+        if self.config.scaling_type == 'var_s':
+            mu_squared = mu_squared * var
+        elif self.config.scaling_type == 's':
+            mu_squared = mu_squared / var
+        else:
+            raise Exception("error in scaling_type, check config")
+
+        # mu_squared = scale * scale
         # print(f"current used mu square is : {mu_squared}")
         # print(f"sq_budget is {self.sq_budget}")
-        if mu_squared > self.sq_budget:
-            scale = torch.sqrt(self.sq_budget * min_var)
-            self.sq_budget = 0
-        else:
-            self.sq_budget -= mu_squared
+        out_of_budget_mask = mu_squared > self.sq_budget
+        sqrt_alpha_tensor = (torch.ones_like(x) * sqrt_alpha)
+        sqrt_alpha_t_minus_one_tensor = (torch.ones_like(x) * sqrt_alpha_t_minus_one)
+        # scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])/ sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
+        # self.sq_budget[out_of_budget_mask] = 0
+        # self.filter[out_of_budget_mask] = False
+        # self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+        # if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
 
-        if t[0] < kwargs["stop"] : scale = 0
 
-        # print(f"guiding scale for step {t[0]}: {scale}")
+        if self.config.scaling_type == 'var_s':
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] / var[out_of_budget_mask])
+        elif self.config.scaling_type == 's':
+            scale[out_of_budget_mask] = torch.sqrt(self.sq_budget[out_of_budget_mask] * var[out_of_budget_mask])
+        # else:
+        #     raise Exception("error in scaling_type, check config")
+
 
         if self.config.guide_type == 'easy':
             guide = rescaled_original_img - x
         elif self.config.guide_type == 'alpha':
             guide = sqrt_alpha * rescaled_original_img - x
+            scale[out_of_budget_mask] = scale[out_of_budget_mask] / sqrt_alpha_tensor[out_of_budget_mask]
         elif self.config.guide_type == 'mu':
             guide = sqrt_alpha_t_minus_one * rescaled_original_img - mean_t_minus_one
-        else:
-            raise Exception("error in guide_type, check config")
-        
+            scale[out_of_budget_mask] = scale[out_of_budget_mask] / sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
+        # else:
+        #     raise Exception("error in guide_type, check config")
+
+
+        self.sq_budget[out_of_budget_mask] = 0
+        self.filter[out_of_budget_mask] = False
+        self.sq_budget[~out_of_budget_mask] -= mu_squared[~out_of_budget_mask]
+        if t[0] < kwargs["stop"] : scale = torch.zeros_like(x)
+
+
         if self.config.scaling_type == 'var_s':
             guide = guide  * scale if t[0]!= 0 else torch.zeros_like(x)
+
         elif self.config.scaling_type == 's':
             guide = guide  * scale / var if t[0]!= 0 else torch.zeros_like(x)
-        else:
-            raise Exception("error in scaling_type, check config")
+
+        print(f"guiding scale for step {t[0]}: {scale.max().item()}")
 
         # print(t[0].item())
         # breakpoint()
-        print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
-        mu = 0.1 / var.min()
-        print(f"mu is {mu}")
-        # print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
+        # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")
+        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}\n")
         return guide
 
 
