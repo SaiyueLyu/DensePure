@@ -85,7 +85,7 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
 
             noisy_img = self.scale*(img) #img is already added noise in core.py
             t = self.t
-            # print(f"input img is {img.min():.3f}, {img.max():.3f}")
+            print(f"input img is {img.min():.3f}, {img.max():.3f}")
 
             rescaled_original_img = 2 * original_x - 1
             model_kwargs={"img" :  rescaled_original_img, "stop": 0}
@@ -149,7 +149,7 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
                         real_t = real_t
                     )
                     noisy_img = out["sample"]
-                    # print(f"x is {noisy_img.min():.3f}, {noisy_img.max():.3f}")
+                    print(f"x is {noisy_img.min():.3f}, {noisy_img.max():.3f}")
 
                 # print(f"sq_budget is {self.sq_budget}")
 
@@ -172,6 +172,7 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
 
     def cond_fn(self, x, t, **kwargs):
         scale = (torch.ones_like(x) * self.guide_scale)
+        breakpoint()
         scale[~self.filter] = 0
         # print(f"scale is {scale}")
         var = kwargs["var"]
@@ -181,10 +182,10 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
         rescaled_original_img = kwargs["img"]
 
         # print(f"alpha t coeff is {sqrt_alpha.min()}, {sqrt_alpha.max()}")
-        # print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
-        # print(f"x is {x.min():.3f}, {x.max():.3f}")
+        print(f"alpha t-1  coeff is {sqrt_alpha_t_minus_one.min()}, {sqrt_alpha_t_minus_one.max()}")
+        print(f"x is {x.min():.3f}, {x.max():.3f}")
         # print(f"x shape is {x.shape}")
-        # print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
+        print(f"img is {rescaled_original_img.min()}, {rescaled_original_img.max()}")
         # print(f"img shape is {rescaled_original_img.shape}")
 
         # accounting
@@ -230,6 +231,8 @@ class GuidedDiffusionFilterPerPixel(torch.nn.Module):
             scale[out_of_budget_mask] = scale[out_of_budget_mask] / sqrt_alpha_t_minus_one_tensor[out_of_budget_mask]
         # else:
         #     raise Exception("error in guide_type, check config")
+
+        print(f"guide value is {guide.min().item():.3f}, {guide.max().item():.3f}")
 
 
         self.sq_budget[out_of_budget_mask] = 0

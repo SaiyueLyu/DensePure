@@ -209,6 +209,8 @@ class GuidedDiffusion(torch.nn.Module):
         else:
             raise Exception("error in scaling_type, check config")
 
+        # print(f"guiding scale for step {t[0]}: {scale}")
+
         # print(t[0].item())
         # breakpoint()
         # print(f"variance is {var.min().item():.3f}, {var.max().item():.3f}")

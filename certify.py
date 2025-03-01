@@ -13,7 +13,7 @@ from core import Smooth
 from datasets import get_dataset, DATASETS, get_num_classes
 import utils
 from runners.diffpure_guided_densepure import GuidedDiffusion
-from runners.filter import GuidedDiffusionFilter
+from runners.minmaxfilter import GuidedDiffusionFilter
 from runners.perpixel import GuidedDiffusionFilterPerPixel
 from runners.perpx_sixcon import GuidedDiffusionFilterPerPixelSixCon
 import timm

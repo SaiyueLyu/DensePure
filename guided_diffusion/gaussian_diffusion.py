@@ -363,6 +363,7 @@ class GaussianDiffusion:
         """
         # below two lines changed by Saiyue
         var = p_mean_var["variance"]
+        # print(f"var is {var.min().item():.3f}, {var.max().item():.3f}")
         mu_t = p_mean_var["mean"]
         if real_t != None:
             sqrt_alpha = _extract_into_tensor(self.sqrt_alphas_cumprod, real_t, x.shape)
@@ -401,7 +402,7 @@ class GaussianDiffusion:
         )
 
         out = p_mean_var.copy()
-        out["pred_xstart"] = self._predict_xstart_from_eps(x, t, eps)
+        out["pred_xstart"] = self._predict_xstart_from_eps(x, t, eps)out["pred_xstart"]
         out["mean"], _, _ = self.q_posterior_mean_variance(
             x_start=out["pred_xstart"], x_t=x, t=t
         )
